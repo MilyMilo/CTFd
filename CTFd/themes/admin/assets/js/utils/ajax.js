@@ -1,5 +1,5 @@
 /** Load a classic (non-module) script, replacing any previous load of the same src. */
-export const getScript = src => {
+export const getScript = (src) => {
   return new Promise((resolve, reject) => {
     const exists = document.querySelector(`script[src='${src}']`);
     if (exists) {

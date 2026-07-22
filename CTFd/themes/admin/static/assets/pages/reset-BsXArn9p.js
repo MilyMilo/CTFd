@@ -1,1 +1,0 @@
-import{i as e}from"../rolldown-runtime-aKtaBQYM.js";import{W as t,z as n}from"./main-Bdz0jqQ7.js";var r=e(t());function i(e){e.preventDefault(),n({title:`Reset CTF?`,body:`Are you sure you want to reset your CTFd instance?`,success:function(){(0,r.default)(`#reset-ctf-form`).off(`submit`).submit()}})}(0,r.default)(()=>{(0,r.default)(`#reset-ctf-form`).submit(i)});

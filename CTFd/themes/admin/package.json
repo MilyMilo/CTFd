@@ -7,8 +7,7 @@
     "dev": "vite build --watch --mode=development",
     "build": "vite build",
     "format": "prettier --write assets/",
-    "lint": "eslint assets/ && prettier --check assets/",
-    "verify": "vite build && git add -N -- static && git diff --exit-code -- static"
+    "lint": "eslint assets/ && prettier --check assets/"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.8",

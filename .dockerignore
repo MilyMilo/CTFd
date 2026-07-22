@@ -17,3 +17,7 @@ CTFd/uploads/**/*
 **/__pycache__
 .venv*
 venv*
+
+# built theme assets: produced by the themes stage, never taken from the context
+CTFd/themes/*/static
+CTFd/themes/*/dist

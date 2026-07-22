@@ -62,7 +62,13 @@ To use the auto-generated Docker images directly:
 1. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and run `uv sync` to create a virtualenv with the dependencies installed.
    - You can also install into an existing environment with `pip install -r requirements.txt`, which is generated from `uv.lock`.
 2. Modify [CTFd/config.ini](https://github.com/CTFd/CTFd/blob/master/CTFd/config.ini) to your liking.
-3. Use `uv run serve.py` or `uv run flask run` in a terminal to drop into debug mode.
+3. Build the theme assets. They are no longer committed, so this is required before the app will serve pages:
+   ```
+   yarn --cwd CTFd/themes/core install && yarn --cwd CTFd/themes/core build
+   yarn --cwd CTFd/themes/admin install && yarn --cwd CTFd/themes/admin build
+   ```
+   Use `yarn --cwd CTFd/themes/core dev` to rebuild on change while working on a theme.
+4. Use `uv run serve.py` or `uv run flask run` in a terminal to drop into debug mode.
 
 ## Live Demo
 

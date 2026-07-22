@@ -9,7 +9,6 @@
     "lint": "prettier --check assets/ && yarn typecheck",
     "typecheck": "tsc --noEmit",
     "test": "node --test \"assets/js/**/*.test.ts\"",
-    "verify": "vite build && git add -N -- static && git diff --exit-code -- static",
     "build:lib": "tsc -p tsconfig.build.json",
     "prepack": "yarn build:lib"
   },

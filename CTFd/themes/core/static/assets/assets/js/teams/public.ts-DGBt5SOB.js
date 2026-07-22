@@ -1,1 +1,0 @@
-import e,{f as t,n,t as r}from"../index.ts-Dmobb2BC.js";import{a as i,r as a}from"../../../subjects-nRRK9zyf.js";window.Alpine=t,window.CTFd=e,n(`TeamGraphs`,i(a)),r();

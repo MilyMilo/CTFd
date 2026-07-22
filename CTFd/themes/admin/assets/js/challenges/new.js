@@ -3,7 +3,6 @@ import nunjucks from "nunjucks";
 import $ from "jquery";
 import "../compat/json";
 
-
 function loadChalTemplate(challenge) {
   $.getScript(CTFd.config.urlRoot + challenge.scripts.view, function () {
     $.get(

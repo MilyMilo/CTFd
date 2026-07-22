@@ -88,6 +88,10 @@ CTFd/plugins/*
 !CTFd/plugins/flags/
 !CTFd/plugins/*.py
 
+# built theme assets (produced by `yarn build`, and by the Dockerfile's themes stage)
+CTFd/themes/*/static/
+CTFd/themes/*/dist/
+
 # non-default themes
 CTFd/themes/*
 !CTFd/themes/admin/
