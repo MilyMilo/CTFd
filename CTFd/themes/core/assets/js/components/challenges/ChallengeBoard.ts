@@ -1,10 +1,10 @@
 import Alpine from "alpinejs";
 
-import CTFd from "../../api";
-import { ui } from "../../ui/adapter";
-import { addTargetBlank } from "../../utils/html";
-import { component } from "../magics";
-import { challengeStore } from "./store";
+import CTFd from "../../api/index.js";
+import { ui } from "../../ui/adapter.js";
+import { addTargetBlank } from "../../utils/html.js";
+import { component } from "../magics.js";
+import { challengeStore } from "./store.js";
 
 /**
  * Build a comparator from a theme setting. The setting is authored as a

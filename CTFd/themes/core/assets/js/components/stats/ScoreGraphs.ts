@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- echarts option trees and
  * operator-defined settings have no fixed shape. */
-import { colorHash } from "../../utils/colors";
+import { colorHash } from "../../utils/colors.js";
 
-import { embed } from "../../utils/graphs/echarts";
-import { getOption as getUserScoreOption } from "../../utils/graphs/echarts/userscore";
-import { component } from "../magics";
+import { embed } from "../../utils/graphs/echarts/index.js";
+import { getOption as getUserScoreOption } from "../../utils/graphs/echarts/userscore.js";
+import { component } from "../magics.js";
 
 export interface ScoreSubject {
   /** Who the graph is about, used for the chart series label. */

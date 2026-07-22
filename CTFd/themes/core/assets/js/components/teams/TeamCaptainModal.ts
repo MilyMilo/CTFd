@@ -1,9 +1,9 @@
-import { serializeJSON } from "../../utils/forms";
+import { serializeJSON } from "../../utils/forms.js";
 
-import CTFd from "../../api";
-import { ui } from "../../ui/adapter";
-import { apiErrors } from "../../utils/errors";
-import { component } from "../magics";
+import CTFd from "../../api/index.js";
+import { ui } from "../../ui/adapter.js";
+import { apiErrors } from "../../utils/errors.js";
+import { component } from "../magics.js";
 
 export const TeamCaptainModal = component(() => ({
   success: null as boolean | null,

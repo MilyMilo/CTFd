@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import advancedFormat from "dayjs/plugin/advancedFormat";
+import advancedFormat from "dayjs/plugin/advancedFormat.js";
 
 // TODO: CTFd 4.0 consider removing dayjs advancedFormat
 dayjs.extend(advancedFormat);

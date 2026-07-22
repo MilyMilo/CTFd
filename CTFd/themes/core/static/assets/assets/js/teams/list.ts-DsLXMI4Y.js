@@ -1,0 +1,1 @@
+import e,{f as t,t as n}from"../index.ts-Dmobb2BC.js";window.CTFd=e,window.Alpine=t,n();

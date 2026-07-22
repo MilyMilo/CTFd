@@ -1,7 +1,7 @@
-import { config } from "../config";
-import { apiFetch } from "../fetch";
-import { WindowController } from "./controller";
-import { read, unread } from "./counter";
+import { config } from "../config.js";
+import { apiFetch } from "../fetch.js";
+import { WindowController } from "./controller.js";
+import { read, unread } from "./counter.js";
 
 export interface Notification {
   id: number;

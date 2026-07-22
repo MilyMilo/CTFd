@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- settings payloads are
  * shaped by the operator's custom fields. */
-import { apiJson } from "./fetch";
+import { apiJson } from "./fetch.js";
 import type {
   ApiResponse,
   Award,
@@ -8,7 +8,7 @@ import type {
   PaginatedResponse,
   Solve,
   Submission,
-} from "./types";
+} from "./types.js";
 
 type TeamId = number | "me";
 

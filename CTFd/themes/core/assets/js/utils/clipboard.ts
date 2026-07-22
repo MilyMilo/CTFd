@@ -1,4 +1,4 @@
-import { ui } from "../ui/adapter";
+import { ui } from "../ui/adapter.js";
 
 export function copyToClipboard($input: HTMLElement) {
   const tooltip = ui().tooltip($input, { title: "Copied!", trigger: "manual" });

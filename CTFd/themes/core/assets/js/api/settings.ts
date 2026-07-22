@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- settings payloads are
  * shaped by the operator's custom fields. */
-import { apiJson } from "./fetch";
-import type { ApiResponse, Token } from "./types";
+import { apiJson } from "./fetch.js";
+import type { ApiResponse, Token } from "./types.js";
 
 export const updateSettings = (body: any) =>
   apiJson<ApiResponse<any>>("/api/v1/users/me", {

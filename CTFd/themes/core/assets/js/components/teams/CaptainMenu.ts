@@ -1,9 +1,9 @@
 import Alpine from "alpinejs";
 
-import CTFd from "../../api";
-import { apiErrors } from "../../utils/errors";
-import { component } from "../magics";
-import { TEAM_MODAL_EVENTS } from "./events";
+import CTFd from "../../api/index.js";
+import { apiErrors } from "../../utils/errors.js";
+import { component } from "../magics.js";
+import { TEAM_MODAL_EVENTS } from "./events.js";
 
 export const CaptainMenu = component(() => ({
   captain: false,

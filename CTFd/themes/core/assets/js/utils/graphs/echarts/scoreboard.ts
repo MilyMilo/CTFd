@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- echarts option trees and
  * CTFd API payloads are both untyped; annotating them here would be fiction. */
-import { colorHash } from "../../colors";
-import { mergeObjects } from "../../objects";
-import { cumulativeSum } from "../../math";
+import { colorHash } from "../../colors.js";
+import { mergeObjects } from "../../objects.js";
+import { cumulativeSum } from "../../math.js";
 import dayjs from "dayjs";
 
 export function getOption(mode: string, places: any, optionMerge?: any) {

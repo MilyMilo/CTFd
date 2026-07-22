@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- echarts option trees and
  * operator-defined settings have no fixed shape. */
-import CTFd from "../../api";
+import CTFd from "../../api/index.js";
 
-import type { ScoreSubject } from "./ScoreGraphs";
+import type { ScoreSubject } from "./ScoreGraphs.js";
 
 /** The logged-in user, whose endpoints take the "me" pseudo-id. */
 export const currentUser: ScoreSubject = {

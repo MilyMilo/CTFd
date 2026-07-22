@@ -1,16 +1,16 @@
-import { challenge } from "./challengeTypes";
-import { config } from "./config";
-import type { CTFdConfig } from "./config";
-import { apiFetch } from "./fetch";
-import { getScript } from "./script";
-import * as challengeApi from "./challenge";
-import * as challengesApi from "./challenges";
-import * as scoreboardApi from "./scoreboard";
-import * as settingsApi from "./settings";
-import * as teamsApi from "./teams";
-import * as usersApi from "./users";
-import { events } from "./events";
-import type { ChallengeDetail } from "./types";
+import { challenge } from "./challengeTypes.js";
+import { config } from "./config.js";
+import type { CTFdConfig } from "./config.js";
+import { apiFetch } from "./fetch.js";
+import { getScript } from "./script.js";
+import * as challengeApi from "./challenge.js";
+import * as challengesApi from "./challenges.js";
+import * as scoreboardApi from "./scoreboard.js";
+import * as settingsApi from "./settings.js";
+import * as teamsApi from "./teams.js";
+import * as usersApi from "./users.js";
+import { events } from "./events/index.js";
+import type { ChallengeDetail } from "./types.js";
 
 export interface Account {
   id: number | null;

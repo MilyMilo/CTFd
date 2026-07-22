@@ -1,8 +1,8 @@
 import dayjs from "dayjs";
 
-import CTFd from "../../api";
-import { ui } from "../../ui/adapter";
-import { component } from "../magics";
+import CTFd from "../../api/index.js";
+import { ui } from "../../ui/adapter.js";
+import { component } from "../magics.js";
 
 /** Start/end are the two configurable event times, each with date+time inputs. */
 type EventTime = "start" | "end";

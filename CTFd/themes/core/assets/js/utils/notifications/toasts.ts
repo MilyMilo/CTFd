@@ -1,8 +1,8 @@
 import Alpine from "alpinejs";
 
-import CTFd from "../../api";
-import { ui } from "../../ui/adapter";
-import { markRead } from "./read";
+import CTFd from "../../api/index.js";
+import { ui } from "../../ui/adapter.js";
+import { markRead } from "./read.js";
 
 export default () => {
   Alpine.store("toast", { title: "", html: "" });

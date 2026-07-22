@@ -1,4 +1,4 @@
-import { config } from "./config";
+import { config } from "./config.js";
 
 /**
  * fetch() against the CTFd API: prefixes the URL root, sends the session cookie

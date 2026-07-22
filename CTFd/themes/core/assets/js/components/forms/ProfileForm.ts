@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- echarts option trees and
  * operator-defined settings have no fixed shape. */
-import { extractCustomFields, serializeJSON } from "../../utils/forms";
-import { apiErrors } from "../../utils/errors";
-import { component } from "../magics";
+import { extractCustomFields, serializeJSON } from "../../utils/forms.js";
+import { apiErrors } from "../../utils/errors.js";
+import { component } from "../magics.js";
 
 /** How long a success/error banner stays up before clearing itself. */
 const FEEDBACK_TIMEOUT = 3000;

@@ -1,10 +1,10 @@
 import Alpine from "alpinejs";
 
-import CTFd from "./index";
-import { createProfileForm } from "./components/forms/ProfileForm";
-import { mount, register } from "./components/registry";
-import { Tokens } from "./components/settings/Tokens";
-import { TokensForm } from "./components/settings/TokensForm";
+import CTFd from "./index.js";
+import { createProfileForm } from "./components/forms/ProfileForm.js";
+import { mount, register } from "./components/registry.js";
+import { Tokens } from "./components/settings/Tokens.js";
+import { TokensForm } from "./components/settings/TokensForm.js";
 
 window.Alpine = Alpine;
 window.CTFd = CTFd;

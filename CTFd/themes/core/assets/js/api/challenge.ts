@@ -1,4 +1,4 @@
-import { apiJson } from "./fetch";
+import { apiJson } from "./fetch.js";
 import type {
   ApiResponse,
   Hint,
@@ -9,7 +9,7 @@ import type {
   Solve,
   SubmissionResult,
   SubmissionStatus,
-} from "./types";
+} from "./types.js";
 
 export async function submitChallenge(
   challengeId: number | null,

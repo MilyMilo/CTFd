@@ -1,7 +1,7 @@
 {
-  "name": "@ctfd/core-theme",
+  "name": "@ctfd/theme-core",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite build --watch --mode=development",
     "build": "vite build",
@@ -9,7 +9,9 @@
     "lint": "prettier --check assets/ && yarn typecheck",
     "typecheck": "tsc --noEmit",
     "test": "node --test \"assets/js/**/*.test.ts\"",
-    "verify": "vite build && git add -N -- static && git diff --exit-code -- static"
+    "verify": "vite build && git add -N -- static && git diff --exit-code -- static",
+    "build:lib": "tsc -p tsconfig.build.json",
+    "prepack": "yarn build:lib"
   },
   "dependencies": {
     "@fontsource/lato": "^4.5.3",
@@ -34,5 +36,47 @@
     "sass": "^1.101.3",
     "typescript": "^7.0.2",
     "vite": "^8.1.5"
-  }
+  },
+  "description": "CTFd's core theme: Alpine components, UI adapter and typed API for building CTFd themes",
+  "license": "Apache-2.0",
+  "type": "module",
+  "types": "./dist/lib.d.ts",
+  "module": "./dist/lib.js",
+  "exports": {
+    ".": {
+      "types": "./dist/lib.d.ts",
+      "import": "./dist/lib.js"
+    },
+    "./components/*": {
+      "types": "./dist/components/*.d.ts",
+      "import": "./dist/components/*.js"
+    },
+    "./api": {
+      "types": "./dist/api/index.d.ts",
+      "import": "./dist/api/index.js"
+    },
+    "./api/*": {
+      "types": "./dist/api/*.d.ts",
+      "import": "./dist/api/*.js"
+    },
+    "./ui/*": {
+      "types": "./dist/ui/*.d.ts",
+      "import": "./dist/ui/*.js"
+    },
+    "./utils/*": {
+      "types": "./dist/utils/*.d.ts",
+      "import": "./dist/utils/*.js"
+    },
+    "./scss/*": "./assets/scss/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "assets/scss",
+    "assets/img",
+    "assets/sounds"
+  ],
+  "sideEffects": [
+    "*.scss"
+  ]
 }

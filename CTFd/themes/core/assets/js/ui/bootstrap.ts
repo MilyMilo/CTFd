@@ -7,7 +7,7 @@ import type {
   TooltipHandle,
   TooltipOptions,
   UIAdapter,
-} from "./adapter";
+} from "./adapter.js";
 
 function resolve(target: Element | string): Element {
   if (typeof target === "string") {

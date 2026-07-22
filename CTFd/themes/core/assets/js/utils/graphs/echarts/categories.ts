@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- echarts option trees and
  * CTFd API payloads are both untyped; annotating them here would be fiction. */
-import { colorHash } from "../../colors";
-import { mergeObjects } from "../../objects";
+import { colorHash } from "../../colors.js";
+import { mergeObjects } from "../../objects.js";
 
 export function getOption(solves: any[], optionMerge?: any) {
   let option: any = {

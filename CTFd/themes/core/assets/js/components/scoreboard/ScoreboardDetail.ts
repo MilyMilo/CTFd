@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- echarts option trees and
  * operator-defined settings have no fixed shape. */
-import CTFd from "../../api";
-import { embed } from "../../utils/graphs/echarts";
-import { getOption } from "../../utils/graphs/echarts/scoreboard";
-import { component } from "../magics";
-import { scoreboardUpdateInterval } from "./interval";
+import CTFd from "../../api/index.js";
+import { embed } from "../../utils/graphs/echarts/index.js";
+import { getOption } from "../../utils/graphs/echarts/scoreboard.js";
+import { component } from "../magics.js";
+import { scoreboardUpdateInterval } from "./interval.js";
 
 export const ScoreboardDetail = component(() => ({
   data: {} as Record<string, any>,

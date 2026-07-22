@@ -3,7 +3,7 @@
  * `x-data="Component(...)"`. `any[]` keeps factories bivariant so a concrete
  * component can be stored in the registry without an unsound cast. */
 
-import type { Magics } from "./magics";
+import type { Magics } from "./magics.js";
 
 export type ComponentFactory<T extends object = Record<string, unknown>> = (
   ...args: any[]

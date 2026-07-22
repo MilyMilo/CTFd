@@ -1,22 +1,22 @@
-import CTFd from "./api";
+import CTFd from "./api/index.js";
 
-import times from "./theme/times";
-import styles from "./theme/styles";
-import highlight from "./theme/highlight";
+import times from "./theme/times.js";
+import styles from "./theme/styles.js";
+import highlight from "./theme/highlight.js";
 
-import { registerUI } from "./ui/adapter";
-import { bootstrapUI } from "./ui/bootstrap";
+import { registerUI } from "./ui/adapter.js";
+import { bootstrapUI } from "./ui/bootstrap.js";
 
-import alerts from "./utils/alerts";
-import tooltips from "./utils/tooltips";
-import collapse from "./utils/collapse";
+import alerts from "./utils/alerts.js";
+import tooltips from "./utils/tooltips.js";
+import collapse from "./utils/collapse.js";
 
-import eventAlerts from "./utils/notifications/alerts";
-import eventToasts from "./utils/notifications/toasts";
-import eventRead from "./utils/notifications/read";
+import eventAlerts from "./utils/notifications/alerts.js";
+import eventToasts from "./utils/notifications/toasts.js";
+import eventRead from "./utils/notifications/read.js";
 
-import { LanguageForm } from "./components/settings/LanguageForm";
-import { register } from "./components/registry";
+import { LanguageForm } from "./components/settings/LanguageForm.js";
+import { register } from "./components/registry.js";
 
 CTFd.init(window.init);
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- Alpine stores and watched
  * values are untyped by nature; narrowing them here would be a fiction. */
 
-import type { ComponentFactory } from "./extend";
+import type { ComponentFactory } from "./extend.js";
 
 /**
  * The properties Alpine injects onto a component instance at runtime. They are

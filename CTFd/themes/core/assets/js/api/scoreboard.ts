@@ -1,5 +1,5 @@
-import { apiJson } from "./fetch";
-import type { ApiResponse, Bracket, ScoreboardEntry, Standing } from "./types";
+import { apiJson } from "./fetch.js";
+import type { ApiResponse, Bracket, ScoreboardEntry, Standing } from "./types.js";
 
 export async function getScoreboard(): Promise<Standing[]> {
   const body = await apiJson<ApiResponse<Standing[]>>("/api/v1/scoreboard");

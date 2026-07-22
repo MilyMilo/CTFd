@@ -1,7 +1,7 @@
-import CTFd from "../../api";
-import { addTargetBlank } from "../../utils/html";
-import { apiErrors } from "../../utils/errors";
-import { component } from "../magics";
+import CTFd from "../../api/index.js";
+import { addTargetBlank } from "../../utils/html.js";
+import { apiErrors } from "../../utils/errors.js";
+import { component } from "../magics.js";
 
 /** The `<details>` element a hint is rendered into. */
 type HintToggleEvent = Event & { target: HTMLDetailsElement };

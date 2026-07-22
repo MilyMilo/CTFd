@@ -1,5 +1,5 @@
-import { apiJson } from "./fetch";
-import type { Award, PaginatedResponse, Solve, Submission } from "./types";
+import { apiJson } from "./fetch.js";
+import type { Award, PaginatedResponse, Solve, Submission } from "./types.js";
 
 type UserId = number | "me";
 

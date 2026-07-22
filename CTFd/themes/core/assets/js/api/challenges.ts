@@ -1,5 +1,5 @@
-import { apiJson } from "./fetch";
-import type { ApiResponse, ChallengeDetail, ChallengeSummary } from "./types";
+import { apiJson } from "./fetch.js";
+import type { ApiResponse, ChallengeDetail, ChallengeSummary } from "./types.js";
 
 export async function getChallenges(): Promise<ChallengeSummary[]> {
   const body = await apiJson<ApiResponse<ChallengeSummary[]>>("/api/v1/challenges");

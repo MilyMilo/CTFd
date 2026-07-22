@@ -1,12 +1,12 @@
 import Alpine from "alpinejs";
 
-import CTFd from "../../api";
-import highlight from "../../theme/highlight";
-import { intl } from "../../theme/times";
-import { ui } from "../../ui/adapter";
-import { component } from "../magics";
-import { CHALLENGE_EVENTS } from "./events";
-import { challengeStore } from "./store";
+import CTFd from "../../api/index.js";
+import highlight from "../../theme/highlight.js";
+import { intl } from "../../theme/times.js";
+import { ui } from "../../ui/adapter.js";
+import { component } from "../magics.js";
+import { CHALLENGE_EVENTS } from "./events.js";
+import { challengeStore } from "./store.js";
 
 /** Maps the `challenge_window_size` theme setting onto modal sizing classes. */
 const MODAL_SIZES: Record<string, string> = {

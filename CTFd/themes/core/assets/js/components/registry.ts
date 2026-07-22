@@ -1,9 +1,9 @@
 import Alpine from "alpinejs";
 
-import { extendComponent } from "./extend";
-import type { ComponentFactory } from "./extend";
-import { component } from "./magics";
-import type { Magics } from "./magics";
+import { extendComponent } from "./extend.js";
+import type { ComponentFactory } from "./extend.js";
+import { component } from "./magics.js";
+import type { Magics } from "./magics.js";
 
 export { extendComponent, component };
 export type { ComponentFactory, Magics };

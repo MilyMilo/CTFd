@@ -1,9 +1,9 @@
 import Alpine from "alpinejs";
 
-import CTFd from "./index";
-import { mount, register } from "./components/registry";
-import { ScoreboardDetail } from "./components/scoreboard/ScoreboardDetail";
-import { ScoreboardList } from "./components/scoreboard/ScoreboardList";
+import CTFd from "./index.js";
+import { mount, register } from "./components/registry.js";
+import { ScoreboardDetail } from "./components/scoreboard/ScoreboardDetail.js";
+import { ScoreboardList } from "./components/scoreboard/ScoreboardList.js";
 
 window.Alpine = Alpine;
 window.CTFd = CTFd;

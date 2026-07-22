@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": "assets/js",
+    "allowImportingTsExtensions": false,
+    "types": []
+  },
+  "include": ["assets/js/**/*.ts"],
+  "exclude": ["assets/js/**/*.test.ts", "node_modules", "static", "dist"]
+}
