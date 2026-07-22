@@ -4,13 +4,11 @@ import CTFd from "../index";
 import { mount, register } from "../components/registry";
 import { createScoreGraphs } from "../components/stats/ScoreGraphs";
 import { currentTeam } from "../components/stats/subjects";
-import {
-  CaptainMenu,
-  TeamCaptainModal,
-  TeamDisbandModal,
-  TeamEditModal,
-  TeamInviteModal,
-} from "../components/teams/modals";
+import { CaptainMenu } from "../components/teams/CaptainMenu";
+import { TeamCaptainModal } from "../components/teams/TeamCaptainModal";
+import { TeamDisbandModal } from "../components/teams/TeamDisbandModal";
+import { TeamEditModal } from "../components/teams/TeamEditModal";
+import { TeamInviteModal } from "../components/teams/TeamInviteModal";
 
 window.Alpine = Alpine;
 window.CTFd = CTFd;

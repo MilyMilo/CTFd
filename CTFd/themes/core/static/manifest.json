@@ -21,7 +21,7 @@
     ]
   },
   "assets/js/settings.ts": {
-    "file": "assets/settings.565cccf2.js",
+    "file": "assets/settings.d3e83450.js",
     "src": "assets/js/settings.ts",
     "isEntry": true,
     "imports": [
@@ -30,7 +30,7 @@
     ]
   },
   "assets/js/challenges.ts": {
-    "file": "assets/challenges.314417e6.js",
+    "file": "assets/challenges.29a135ba.js",
     "src": "assets/js/challenges.ts",
     "isEntry": true,
     "imports": [
@@ -38,7 +38,7 @@
     ]
   },
   "assets/js/scoreboard.ts": {
-    "file": "assets/scoreboard.578b3083.js",
+    "file": "assets/scoreboard.0d09c8e0.js",
     "src": "assets/js/scoreboard.ts",
     "isEntry": true,
     "imports": [
@@ -67,7 +67,7 @@
     ]
   },
   "assets/js/teams/private.ts": {
-    "file": "assets/teams_private.1f4ff4ca.js",
+    "file": "assets/teams_private.17410d8a.js",
     "src": "assets/js/teams/private.ts",
     "isEntry": true,
     "imports": [

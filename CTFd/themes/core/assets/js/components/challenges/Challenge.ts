@@ -5,6 +5,7 @@ import highlight from "../../theme/highlight";
 import { intl } from "../../theme/times";
 import { ui } from "../../ui/adapter";
 import { component } from "../magics";
+import { CHALLENGE_EVENTS } from "./events";
 import { challengeStore } from "./store";
 
 /** Maps the `challenge_window_size` theme setting onto modal sizing classes. */
@@ -104,7 +105,7 @@ export const Challenge = component(() => ({
     modal.onHidden(() => {
       // Dispatch load-challenge event to call loadChallenge in the ChallengeBoard
       Alpine.nextTick(() => {
-        this.$dispatch("load-challenge", this.getNextId());
+        this.$dispatch(CHALLENGE_EVENTS.loadChallenge, this.getNextId());
       });
     });
     modal.hide();
@@ -182,7 +183,7 @@ export const Challenge = component(() => ({
     }
 
     // Dispatch load-challenges event to call loadChallenges in the ChallengeBoard
-    this.$dispatch("load-challenges");
+    this.$dispatch(CHALLENGE_EVENTS.loadChallenges);
   },
 
   async submitRating() {

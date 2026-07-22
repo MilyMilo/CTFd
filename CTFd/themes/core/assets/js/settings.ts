@@ -3,7 +3,8 @@ import Alpine from "alpinejs";
 import CTFd from "./index";
 import { createProfileForm } from "./components/forms/ProfileForm";
 import { mount, register } from "./components/registry";
-import { Tokens, TokensForm } from "./components/settings/tokens";
+import { Tokens } from "./components/settings/Tokens";
+import { TokensForm } from "./components/settings/TokensForm";
 
 window.Alpine = Alpine;
 window.CTFd = CTFd;

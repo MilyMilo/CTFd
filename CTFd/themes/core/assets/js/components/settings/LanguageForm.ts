@@ -1,5 +1,5 @@
-import CTFd from "../index";
-import { component } from "./magics";
+import CTFd from "../../index";
+import { component } from "../magics";
 
 export const LanguageForm = component(() => ({
   async set(event: Event) {

@@ -18,7 +18,7 @@ import eventAlerts from "./utils/notifications/alerts";
 import eventToasts from "./utils/notifications/toasts";
 import eventRead from "./utils/notifications/read";
 
-import { LanguageForm } from "./components/LanguageForm";
+import { LanguageForm } from "./components/settings/LanguageForm";
 import { register } from "./components/registry";
 
 dayjs.extend(advancedFormat);

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any -- API payloads are untyped
- * until ctfd-js is absorbed. */
 import { serializeJSON } from "@ctfdio/ctfd-js/forms";
 
 import CTFd from "../../index";
@@ -25,19 +23,5 @@ export const TokensForm = component(() => ({
 
   copyToken() {
     copyToClipboard(this.$refs.token);
-  },
-}));
-
-export const Tokens = component(() => ({
-  selectedTokenId: null as number | null,
-
-  async deleteTokenModal(tokenId: number) {
-    this.selectedTokenId = tokenId;
-    ui().modal(this.$refs.confirmModal).show();
-  },
-
-  async deleteSelectedToken() {
-    await CTFd.pages.settings.deleteToken(this.selectedTokenId);
-    this.$refs[`token-${this.selectedTokenId}`]?.remove();
   },
 }));
