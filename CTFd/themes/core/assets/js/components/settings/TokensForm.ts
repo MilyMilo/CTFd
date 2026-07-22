@@ -1,6 +1,6 @@
 import { serializeJSON } from "../../utils/forms";
 
-import CTFd from "../../index";
+import CTFd from "../../api";
 import { ui } from "../../ui/adapter";
 import { copyToClipboard } from "../../utils/clipboard";
 import { component } from "../magics";

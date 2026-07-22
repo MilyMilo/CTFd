@@ -18,12 +18,13 @@
     "verbatimModuleSyntax": true,
     "noEmit": true,
     "skipLibCheck": true,
+    "types": ["node"],
     "resolveJsonModule": true,
 
     "paths": {
       "~/*": ["./node_modules/*"]
     }
   },
-  "include": ["assets/js/**/*.ts", "assets/js/**/*.js", "vite.config.js"],
+  "include": ["assets/js/**/*.ts", "assets/js/**/*.js", "vite.config.ts"],
   "exclude": ["node_modules", "static"]
 }

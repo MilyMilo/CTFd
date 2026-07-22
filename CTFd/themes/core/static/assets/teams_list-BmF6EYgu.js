@@ -1,0 +1,1 @@
+import e,{i as t,t as n}from"./index-CGcUvuL1.js";window.CTFd=e,window.Alpine=t,n();

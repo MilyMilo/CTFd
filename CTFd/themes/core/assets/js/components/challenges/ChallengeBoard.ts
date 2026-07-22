@@ -1,6 +1,6 @@
 import Alpine from "alpinejs";
 
-import CTFd from "../../index";
+import CTFd from "../../api";
 import { ui } from "../../ui/adapter";
 import { addTargetBlank } from "../../utils/html";
 import { component } from "../magics";

@@ -1,4 +1,4 @@
-import CTFd from "../../index";
+import CTFd from "../../api";
 import { component } from "../magics";
 
 export const LanguageForm = component(() => ({

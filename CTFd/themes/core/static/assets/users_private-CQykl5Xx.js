@@ -1,0 +1,1 @@
+import e,{i as t,n,t as r}from"./index-CGcUvuL1.js";import{a as i,n as a}from"./subjects-C4c0C_eN.js";window.Alpine=t,window.CTFd=e,n(`UserGraphs`,i(a)),r();

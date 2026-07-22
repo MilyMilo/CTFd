@@ -1,6 +1,6 @@
 import Alpine from "alpinejs";
 
-import CTFd from "../../index";
+import CTFd from "../../api";
 import { apiErrors } from "../../utils/errors";
 import { component } from "../magics";
 import { TEAM_MODAL_EVENTS } from "./events";

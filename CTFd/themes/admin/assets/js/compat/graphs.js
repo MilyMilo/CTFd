@@ -1,5 +1,6 @@
 import $ from "jquery";
-import echarts from "echarts/dist/echarts.common";
+// UMD build: a namespace import is required for rolldown's CJS interop.
+import * as echarts from "echarts/dist/echarts.common";
 import dayjs from "dayjs";
 import { colorHash } from "./styles";
 import { cumulativeSum } from "./math";

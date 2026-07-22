@@ -1,5 +1,5 @@
 {
-  "name": "core-beta",
+  "name": "@ctfd/core-theme",
   "private": true,
   "version": "0.0.1",
   "scripts": {
@@ -28,11 +28,11 @@
     "@types/alpinejs": "^3.13.11",
     "@types/bootstrap": "^5.2.11",
     "@types/node": "^26.1.1",
-    "@vitejs/plugin-vue": "^3.0.1",
+    "@vitejs/plugin-vue": "^6.0.8",
     "prettier": "^3.2.5",
     "rollup-plugin-copy": "^3.4.0",
-    "sass": "^1.49.7",
+    "sass": "^1.101.3",
     "typescript": "^7.0.2",
-    "vite": "^3.0.5"
+    "vite": "^8.1.5"
   }
 }

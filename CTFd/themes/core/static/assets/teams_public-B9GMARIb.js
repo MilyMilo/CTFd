@@ -1,0 +1,1 @@
+import e,{i as t,n,t as r}from"./index-CGcUvuL1.js";import{a as i,r as a}from"./subjects-C4c0C_eN.js";window.Alpine=t,window.CTFd=e,n(`TeamGraphs`,i(a)),r();

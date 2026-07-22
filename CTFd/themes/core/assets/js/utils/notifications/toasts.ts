@@ -1,6 +1,6 @@
 import Alpine from "alpinejs";
 
-import CTFd from "../../index";
+import CTFd from "../../api";
 import { ui } from "../../ui/adapter";
 import { markRead } from "./read";
 

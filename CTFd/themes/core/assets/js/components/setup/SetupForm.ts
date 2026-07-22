@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-import CTFd from "../../index";
+import CTFd from "../../api";
 import { ui } from "../../ui/adapter";
 import { component } from "../magics";
 

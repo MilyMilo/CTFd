@@ -1,7 +1,8 @@
 import "./main";
 import CTFd from "../compat/CTFd";
 import $ from "jquery";
-import echarts from "echarts/dist/echarts.common";
+// UMD build: a namespace import is required for rolldown's CJS interop.
+import * as echarts from "echarts/dist/echarts.common";
 import { colorHash } from "../compat/styles";
 import Vue from "vue";
 import ScoreboardMatrix from "../components/statistics/ScoreboardMatrix.vue";

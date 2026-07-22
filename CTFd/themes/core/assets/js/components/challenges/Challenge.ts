@@ -1,6 +1,6 @@
 import Alpine from "alpinejs";
 
-import CTFd from "../../index";
+import CTFd from "../../api";
 import highlight from "../../theme/highlight";
 import { intl } from "../../theme/times";
 import { ui } from "../../ui/adapter";

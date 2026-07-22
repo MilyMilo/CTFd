@@ -1,4 +1,4 @@
-const { resolve } = require("path");
+import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import copy from "rollup-plugin-copy";
@@ -38,11 +38,11 @@ export default defineConfig({
               dest: "static/webfonts"
             },
             {
-              src: "./node_modules/@ctfdio/ctfd-js/assets/images/**",
+              src: "../core/assets/img/**",
               dest: "static/img"
             },
             {
-              src: "./node_modules/@ctfdio/ctfd-js/assets/sounds/**",
+              src: "../core/assets/sounds/**",
               dest: "static/sounds"
             }
           ],
@@ -50,8 +50,11 @@ export default defineConfig({
         })
       ],
       output: {
-        manualChunks: {
-          echarts: ["echarts", "zrender"]
+        // rolldown requires a function here; an object map is no longer accepted.
+        manualChunks(id) {
+          if (id.includes("node_modules/echarts") || id.includes("node_modules/zrender")) {
+            return "echarts";
+          }
         }
       },
       input: {

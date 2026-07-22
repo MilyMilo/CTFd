@@ -1,6 +1,6 @@
 import lolight from "lolight";
 
-import CTFd from "../index";
+import CTFd from "../api";
 
 export default () => {
   const settings = CTFd.config.themeSettings;

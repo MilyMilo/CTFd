@@ -1,6 +1,6 @@
 import Alpine from "alpinejs";
 
-import CTFd from "../../index";
+import CTFd from "../../api";
 
 export default () => {
   CTFd.events.onCount(count => Alpine.store("unreadCount", count));
