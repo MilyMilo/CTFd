@@ -1,11 +1,11 @@
 {
   "assets/js/index.ts": {
-    "file": "assets/index.9c317f1c.js",
+    "file": "assets/index.c95d9acc.js",
     "src": "assets/js/index.ts",
     "isEntry": true
   },
   "assets/js/page.ts": {
-    "file": "assets/page.390675b5.js",
+    "file": "assets/page.912603cb.js",
     "src": "assets/js/page.ts",
     "isEntry": true,
     "imports": [
@@ -13,7 +13,7 @@
     ]
   },
   "assets/js/setup.ts": {
-    "file": "assets/setup.f6c554ee.js",
+    "file": "assets/setup.7f41f766.js",
     "src": "assets/js/setup.ts",
     "isEntry": true,
     "imports": [
@@ -21,16 +21,16 @@
     ]
   },
   "assets/js/settings.ts": {
-    "file": "assets/settings.d3e83450.js",
+    "file": "assets/settings.00a5e2a0.js",
     "src": "assets/js/settings.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_clipboard.5004776d.js"
+      "_clipboard.598b04a2.js"
     ]
   },
   "assets/js/challenges.ts": {
-    "file": "assets/challenges.29a135ba.js",
+    "file": "assets/challenges.75050322.js",
     "src": "assets/js/challenges.ts",
     "isEntry": true,
     "imports": [
@@ -38,7 +38,7 @@
     ]
   },
   "assets/js/scoreboard.ts": {
-    "file": "assets/scoreboard.0d09c8e0.js",
+    "file": "assets/scoreboard.afd444cc.js",
     "src": "assets/js/scoreboard.ts",
     "isEntry": true,
     "imports": [
@@ -48,7 +48,7 @@
     ]
   },
   "assets/js/notifications.ts": {
-    "file": "assets/notifications.fd4ad015.js",
+    "file": "assets/notifications.f7a96048.js",
     "src": "assets/js/notifications.ts",
     "isEntry": true,
     "imports": [
@@ -56,30 +56,30 @@
     ]
   },
   "assets/js/teams/public.ts": {
-    "file": "assets/teams_public.63409a83.js",
+    "file": "assets/teams_public.59b1af50.js",
     "src": "assets/js/teams/public.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_subjects.a86387a7.js",
+      "_subjects.ebd5f68e.js",
       "_math.c4f0db39.js",
       "_echarts.128204f2.js"
     ]
   },
   "assets/js/teams/private.ts": {
-    "file": "assets/teams_private.17410d8a.js",
+    "file": "assets/teams_private.39485767.js",
     "src": "assets/js/teams/private.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_subjects.a86387a7.js",
-      "_clipboard.5004776d.js",
+      "_subjects.ebd5f68e.js",
+      "_clipboard.598b04a2.js",
       "_math.c4f0db39.js",
       "_echarts.128204f2.js"
     ]
   },
   "assets/js/teams/list.ts": {
-    "file": "assets/teams_list.138eeaac.js",
+    "file": "assets/teams_list.674e2d9c.js",
     "src": "assets/js/teams/list.ts",
     "isEntry": true,
     "imports": [
@@ -87,45 +87,45 @@
     ]
   },
   "assets/js/users/public.ts": {
-    "file": "assets/users_public.534add42.js",
+    "file": "assets/users_public.86b8a248.js",
     "src": "assets/js/users/public.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_subjects.a86387a7.js",
+      "_subjects.ebd5f68e.js",
       "_math.c4f0db39.js",
       "_echarts.128204f2.js"
     ]
   },
   "assets/js/users/private.ts": {
-    "file": "assets/users_private.d091fb8a.js",
+    "file": "assets/users_private.60e5213b.js",
     "src": "assets/js/users/private.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_subjects.a86387a7.js",
+      "_subjects.ebd5f68e.js",
       "_math.c4f0db39.js",
       "_echarts.128204f2.js"
     ]
   },
   "assets/js/users/list.ts": {
-    "file": "assets/users_list.a9d9752c.js",
+    "file": "assets/users_list.ae8ed3a6.js",
     "src": "assets/js/users/list.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts"
     ]
   },
-  "assets/js/color_mode_switcher.ts": {
-    "file": "assets/color_mode_switcher.43fcc75e.js",
-    "src": "assets/js/color_mode_switcher.ts",
+  "assets/js/colorModeSwitcher.ts": {
+    "file": "assets/colorModeSwitcher.6773abc0.js",
+    "src": "assets/js/colorModeSwitcher.ts",
     "isEntry": true
   },
   "_echarts.128204f2.js": {
     "file": "assets/echarts.128204f2.js"
   },
-  "_clipboard.5004776d.js": {
-    "file": "assets/clipboard.5004776d.js",
+  "_clipboard.598b04a2.js": {
+    "file": "assets/clipboard.598b04a2.js",
     "imports": [
       "assets/js/index.ts"
     ]
@@ -136,8 +136,8 @@
       "_echarts.128204f2.js"
     ]
   },
-  "_subjects.a86387a7.js": {
-    "file": "assets/subjects.a86387a7.js",
+  "_subjects.ebd5f68e.js": {
+    "file": "assets/subjects.ebd5f68e.js",
     "imports": [
       "assets/js/index.ts",
       "_math.c4f0db39.js"

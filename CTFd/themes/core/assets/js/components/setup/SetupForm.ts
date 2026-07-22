@@ -96,9 +96,9 @@ export const SetupForm = component(() => ({
       const time = this.$refs[`${datetime}Time`] as HTMLInputElement;
       const preview = this.$refs[`${datetime}Preview`] as HTMLInputElement;
 
-      const unix_time = dayjs(`${date.value} ${time.value}`, "YYYY-MM-DD HH:mm").unix();
+      const unixTime = dayjs(`${date.value} ${time.value}`, "YYYY-MM-DD HH:mm").unix();
 
-      preview.value = isNaN(unix_time) ? "" : String(unix_time);
+      preview.value = isNaN(unixTime) ? "" : String(unixTime);
     };
   },
 

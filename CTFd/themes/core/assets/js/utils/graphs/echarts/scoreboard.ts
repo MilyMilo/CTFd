@@ -63,17 +63,17 @@ export function getOption(mode: string, places: any, optionMerge?: any) {
 
   const teams = Object.keys(places);
   for (let i = 0; i < teams.length; i++) {
-    const team_score = [];
+    const teamScore = [];
     const times = [];
     for (let j = 0; j < places[teams[i]]["solves"].length; j++) {
-      team_score.push(places[teams[i]]["solves"][j].value);
+      teamScore.push(places[teams[i]]["solves"][j].value);
       const date = dayjs(places[teams[i]]["solves"][j].date);
       times.push(date.toDate());
     }
 
-    const total_scores = cumulativeSum(team_score);
+    const totalScores = cumulativeSum(teamScore);
     let scores = times.map(function (e, i) {
-      return [e, total_scores[i]];
+      return [e, totalScores[i]];
     });
 
     option.legend.data.push(places[teams[i]]["name"]);

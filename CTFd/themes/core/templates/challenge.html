@@ -1,4 +1,4 @@
-<div :class="getStyles()" role="document" x-data="Challenge" x-init='id = {{ challenge.id }}; max_attempts = {{ max_attempts }}; attempts = {{ attempts }}; ratingValue = {{ (rating.get('value') if rating else None) | tojson }}; ratingReview = {{ (rating.get('review', '') if rating else None) | tojson }};'>
+<div :class="getStyles()" role="document" x-data="Challenge" x-init='id = {{ challenge.id }}; maxAttempts = {{ max_attempts }}; attempts = {{ attempts }}; ratingValue = {{ (rating.get('value') if rating else None) | tojson }}; ratingReview = {{ (rating.get('review', '') if rating else None) | tojson }};'>
   <div class="modal-content">
     <div class="modal-body py-4 px-4 px-sm-5">
 
@@ -155,9 +155,9 @@
               </div>
             {% endif %}
 
-            <template x-if="max_attempts > 0">
+            <template x-if="maxAttempts > 0">
               <p class="text-center">
-                <span x-text="attempts"></span>/<span x-text="max_attempts"></span> {% trans c=max_attempts %}attempt{% pluralize %}attempts{% endtrans %}
+                <span x-text="attempts"></span>/<span x-text="maxAttempts"></span> {% trans c=max_attempts %}attempt{% pluralize %}attempts{% endtrans %}
               </p>
             </template>
 
@@ -212,20 +212,20 @@
 
                       {% if Configs.social_shares %}
                       <div>
-                        <button x-show="!share_url" @click="getShareUrl()" class="btn btn-sm btn-outline-info mt-3">
+                        <button x-show="!shareUrl" @click="getShareUrl()" class="btn btn-sm btn-outline-info mt-3">
                           {% trans %}Share{% endtrans %}
                         </button>
-                        <div class="btn-group mt-3" role="group" x-show="share_url">
+                        <div class="btn-group mt-3" role="group" x-show="shareUrl">
                           <button type="button" class="btn btn-sm btn-outline-secondary" @click="copyShareUrl()" data-bs-toggle="tooltip" data-bs-title="Copied!">
                             <i class="fa-solid fa-copy"></i>
                           </button>
-                          <a :href="'https://twitter.com/intent/tweet?url=' + encodeURIComponent(share_url)" role="button" class="btn btn-sm btn-outline-secondary" target="_blank">
+                          <a :href="'https://twitter.com/intent/tweet?url=' + encodeURIComponent(shareUrl)" role="button" class="btn btn-sm btn-outline-secondary" target="_blank">
                             <i class="fa-brands fa-twitter"></i>
                           </a>
-                          <a :href="'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(share_url)" role="button" class="btn btn-sm btn-outline-secondary" target="_blank">
+                          <a :href="'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl)" role="button" class="btn btn-sm btn-outline-secondary" target="_blank">
                             <i class="fa-brands fa-facebook-f"></i>
                           </a>
-                          <a :href="'http://www.linkedin.com/shareArticle?url=' + encodeURIComponent(share_url)" role="button" class="btn btn-sm btn-outline-secondary" target="_blank">
+                          <a :href="'http://www.linkedin.com/shareArticle?url=' + encodeURIComponent(shareUrl)" role="button" class="btn btn-sm btn-outline-secondary" target="_blank">
                             <i class="fa-brands fa-linkedin-in"></i>
                           </a>
                         </div>

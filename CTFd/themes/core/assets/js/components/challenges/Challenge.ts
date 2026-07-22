@@ -17,15 +17,14 @@ const MODAL_SIZES: Record<string, string> = {
 
 export const Challenge = component(() => ({
   id: null as number | null,
-  next_id: null as number | null,
   submission: "",
   tab: null as unknown,
   solves: [] as Record<string, any>[],
   submissions: [] as Record<string, any>[],
   solution: null as string | null,
   response: null as Record<string, any> | null,
-  share_url: null as string | null,
-  max_attempts: 0,
+  shareUrl: null as string | null,
+  maxAttempts: 0,
   attempts: 0,
   ratingValue: 0,
   selectedRating: 0,
@@ -87,12 +86,12 @@ export const Challenge = component(() => ({
   },
 
   async showSolution() {
-    const solution_id = this.getSolutionId();
+    const solutionId = this.getSolutionId();
     CTFd._functions.challenge.displaySolution = (solution: Record<string, any>) => {
       this.solution = solution.html;
       ui().tab(this.$el).show();
     };
-    await CTFd.pages.challenge.displaySolution(solution_id);
+    await CTFd.pages.challenge.displaySolution(solutionId);
   },
 
   getNextId() {
@@ -121,11 +120,11 @@ export const Challenge = component(() => ({
       body: JSON.stringify(body),
     });
     const data = await response.json();
-    this.share_url = data["data"]["url"];
+    this.shareUrl = data["data"]["url"];
   },
 
   copyShareUrl() {
-    navigator.clipboard.writeText(this.share_url ?? "");
+    navigator.clipboard.writeText(this.shareUrl ?? "");
 
     // Created on demand and disposed after, so the manual tooltip does not stay
     // attached to the button and fire on hover.
@@ -174,11 +173,7 @@ export const Challenge = component(() => ({
     }
 
     // Increment attempts counter
-    if (
-      this.max_attempts > 0 &&
-      status != "already_solved" &&
-      status != "ratelimited"
-    ) {
+    if (this.maxAttempts > 0 && status != "already_solved" && status != "ratelimited") {
       this.attempts += 1;
     }
 

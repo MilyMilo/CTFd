@@ -67,7 +67,7 @@ export default defineConfig({
         users_private: resolve(__dirname, "assets/js/users/private.ts"),
         users_list: resolve(__dirname, "assets/js/users/list.ts"),
         main: resolve(__dirname, "assets/scss/main.scss"),
-        color_mode_switcher: resolve(__dirname, "assets/js/color_mode_switcher.ts"),
+        colorModeSwitcher: resolve(__dirname, "assets/js/colorModeSwitcher.ts"),
       },
     },
   },
