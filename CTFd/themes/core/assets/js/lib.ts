@@ -39,7 +39,7 @@ export { default as CTFd } from "./api/index.js";
 export * from "./api/types.js";
 
 // Components
-export { Challenge } from "./components/challenges/Challenge.js";
+export { Challenge, CHALLENGE_WINDOW } from "./components/challenges/Challenge.js";
 export { ChallengeBoard } from "./components/challenges/ChallengeBoard.js";
 export { Hint } from "./components/challenges/Hint.js";
 export { CHALLENGE_EVENTS } from "./components/challenges/events.js";

@@ -8,6 +8,9 @@ import { component } from "../magics.js";
 import { CHALLENGE_EVENTS } from "./events.js";
 import { challengeStore } from "./store.js";
 
+/** The modal a challenge is rendered into; themes mark it with this ref. */
+export const CHALLENGE_WINDOW = "[x-ref='challengeWindow']";
+
 /** Maps the `challenge_window_size` theme setting onto modal sizing classes. */
 const MODAL_SIZES: Record<string, string> = {
   sm: "modal-sm",
@@ -95,8 +98,13 @@ export const Challenge = component(() => ({
     return challengeStore().data.next_id;
   },
 
+  /** Close the challenge modal. Themes with their own close button call this. */
+  closeChallenge() {
+    ui().modal(CHALLENGE_WINDOW).hide();
+  },
+
   async nextChallenge() {
-    const modal = ui().modal("[x-ref='challengeWindow']");
+    const modal = ui().modal(CHALLENGE_WINDOW);
 
     modal.onHidden(() => {
       // Dispatch load-challenge event to call loadChallenge in the ChallengeBoard

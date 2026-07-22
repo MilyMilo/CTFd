@@ -4,6 +4,7 @@ import CTFd from "../../api/index.js";
 import { ui } from "../../ui/adapter.js";
 import { addTargetBlank } from "../../utils/html.js";
 import { component } from "../magics.js";
+import { CHALLENGE_WINDOW } from "./Challenge.js";
 import { challengeStore } from "./store.js";
 
 /**
@@ -95,7 +96,7 @@ export const ChallengeBoard = component(() => ({
 
       // nextTick is required here because we're working in a callback
       Alpine.nextTick(() => {
-        const modal = ui().modal("[x-ref='challengeWindow']");
+        const modal = ui().modal(CHALLENGE_WINDOW);
         modal.onHidden(() => {
           // Remove location hash
           history.replaceState(null, "", " ");
