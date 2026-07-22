@@ -2,7 +2,9 @@
 import io
 import json
 import os
+import shutil
 import zipfile
+from contextlib import contextmanager
 
 from CTFd.constants.themes import DEFAULT_THEME
 from CTFd.models import Challenges, Flags, Teams, Users
@@ -106,22 +108,38 @@ def test_import_ctf():
     destroy_ctfd(app)
 
 
+@contextmanager
+def installed_theme(name="test_theme"):
+    """Create a throwaway theme directory so a non-default theme is installed."""
+    import CTFd as CTFd_module
+
+    path = os.path.join(os.path.dirname(CTFd_module.__file__), "themes", name)
+    os.makedirs(os.path.join(path, "templates"), exist_ok=True)
+    try:
+        yield name
+    finally:
+        shutil.rmtree(path, ignore_errors=True)
+
+
 def test_import_ctf_restores_installed_theme():
     """Test that import_ctf restores the theme from backup if it is installed"""
-    app = create_ctfd(ctf_theme="core-deprecated")
-    if not app.config.get("SQLALCHEMY_DATABASE_URI").startswith("sqlite"):
-        with app.app_context():
-            backup = export_ctf()
-            with open("export.test_import_ctf_restores_installed_theme.zip", "wb") as f:
-                f.write(backup.read())
-    destroy_ctfd(app)
+    with installed_theme() as theme:
+        app = create_ctfd(ctf_theme=theme)
+        if not app.config.get("SQLALCHEMY_DATABASE_URI").startswith("sqlite"):
+            with app.app_context():
+                backup = export_ctf()
+                with open(
+                    "export.test_import_ctf_restores_installed_theme.zip", "wb"
+                ) as f:
+                    f.write(backup.read())
+        destroy_ctfd(app)
 
-    app = create_ctfd()
-    if not app.config.get("SQLALCHEMY_DATABASE_URI").startswith("sqlite"):
-        with app.app_context():
-            import_ctf("export.test_import_ctf_restores_installed_theme.zip")
-            assert get_config("ctf_theme") == "core-deprecated"
-    destroy_ctfd(app)
+        app = create_ctfd()
+        if not app.config.get("SQLALCHEMY_DATABASE_URI").startswith("sqlite"):
+            with app.app_context():
+                import_ctf("export.test_import_ctf_restores_installed_theme.zip")
+                assert get_config("ctf_theme") == theme
+        destroy_ctfd(app)
 
 
 def test_import_ctf_defaults_theme_when_not_installed():
