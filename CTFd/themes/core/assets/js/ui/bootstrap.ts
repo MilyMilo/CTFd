@@ -40,6 +40,11 @@ export const bootstrapUI: UIAdapter = {
     return { show: () => tab.show() };
   },
 
+  tabFor(panel: string): TabHandle | null {
+    const trigger = document.querySelector(`[data-bs-target="${panel}"]`);
+    return trigger ? bootstrapUI.tab(trigger) : null;
+  },
+
   toast(target: Element | string): ToastHandle {
     const el = resolve(target);
     const toast = Toast.getOrCreateInstance(el);
@@ -48,6 +53,10 @@ export const bootstrapUI: UIAdapter = {
       show: () => toast.show(),
       onHidden: callback =>
         el.addEventListener("hidden.bs.toast", () => callback(), { once: true }),
+      onDismissed: callback =>
+        el
+          .querySelector("[data-bs-dismiss='toast']")
+          ?.addEventListener("click", () => callback(), { once: true }),
     };
   },
 

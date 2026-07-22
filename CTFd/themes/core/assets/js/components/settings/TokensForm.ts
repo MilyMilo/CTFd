@@ -5,23 +5,26 @@ import { ui } from "../../ui/adapter.js";
 import { copyToClipboard } from "../../utils/clipboard.js";
 import { component } from "../magics.js";
 
-export const TokensForm = component(() => ({
-  token: null as string | null,
+export const TokensForm = component(
+  () => ({
+    token: null as string | null,
 
-  async generateToken() {
-    const data = serializeJSON(this.$refs.form as HTMLFormElement);
+    async generateToken() {
+      const data = serializeJSON(this.$refs.form as HTMLFormElement);
 
-    if (!data.expiration) {
-      delete data.expiration;
-    }
+      if (!data.expiration) {
+        delete data.expiration;
+      }
 
-    const response = await CTFd.pages.settings.generateToken(data);
-    this.token = response.data.value ?? null;
+      const response = await CTFd.pages.settings.generateToken(data);
+      this.token = response.data.value ?? null;
 
-    ui().modal(this.$refs.tokenModal).show();
-  },
+      ui().modal(this.$refs.tokenModal).show();
+    },
 
-  copyToken() {
-    copyToClipboard(this.$refs.token);
-  },
-}));
+    copyToken() {
+      copyToClipboard(this.$refs.token);
+    },
+  }),
+  { name: "TokensForm", refs: ["form", "tokenModal", "token"] },
+);

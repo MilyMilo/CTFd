@@ -22,11 +22,7 @@ export default () => {
     const toast = ui().toast(element);
 
     // Dismissing counts as reading it; letting it time out does not.
-    const close = element.querySelector("[data-bs-dismiss='toast']");
-    const handler = () => markRead(notification.id);
-    close?.addEventListener("click", handler, { once: true });
-
-    toast.onHidden(() => close?.removeEventListener("click", handler));
+    toast.onDismissed(() => markRead(notification.id));
     toast.show();
   });
 };

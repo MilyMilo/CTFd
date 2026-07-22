@@ -6,26 +6,32 @@ import { getOption } from "../../utils/graphs/echarts/scoreboard.js";
 import { component } from "../magics.js";
 import { scoreboardUpdateInterval } from "./interval.js";
 
-export const ScoreboardDetail = component(() => ({
-  data: {} as Record<string, any>,
-  show: true,
-  activeBracket: null as number | null,
+export const ScoreboardDetail = component(
+  () => ({
+    data: {} as Record<string, any>,
+    show: true,
+    activeBracket: null as number | null,
 
-  async update() {
-    this.data = await CTFd.pages.scoreboard.getScoreboardDetail(10, this.activeBracket);
+    async update() {
+      this.data = await CTFd.pages.scoreboard.getScoreboardDetail(
+        10,
+        this.activeBracket,
+      );
 
-    const option = getOption(
-      CTFd.config.userMode,
-      this.data,
-      window.scoreboardChartOptions,
-    );
+      const option = getOption(
+        CTFd.config.userMode,
+        this.data,
+        window.scoreboardChartOptions,
+      );
 
-    embed(this.$refs.scoregraph, option);
-    this.show = Object.keys(this.data).length > 0;
-  },
+      embed(this.$refs.scoregraph, option);
+      this.show = Object.keys(this.data).length > 0;
+    },
 
-  async init() {
-    this.update();
-    setInterval(() => this.update(), scoreboardUpdateInterval());
-  },
-}));
+    async init() {
+      this.update();
+      setInterval(() => this.update(), scoreboardUpdateInterval());
+    },
+  }),
+  { name: "ScoreboardDetail", refs: ["scoregraph"] },
+);

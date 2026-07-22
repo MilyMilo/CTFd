@@ -20,41 +20,44 @@ const FEEDBACK_TIMEOUT = 3000;
  * during `@submit`, and `serializeJSON` only works on a real form element.
  */
 export function createProfileForm(update: (data: any) => Promise<any>) {
-  return component(() => ({
-    success: null as boolean | null,
-    error: null as boolean | null,
-    initial: null as any,
-    errors: [] as string[],
+  return component(
+    () => ({
+      success: null as boolean | null,
+      error: null as boolean | null,
+      initial: null as any,
+      errors: [] as string[],
 
-    init() {
-      this.initial = serializeJSON(this.$refs.form as HTMLFormElement);
-    },
+      init() {
+        this.initial = serializeJSON(this.$refs.form as HTMLFormElement);
+      },
 
-    async updateProfile() {
-      this.success = null;
-      this.error = null;
-      this.errors = [];
+      async updateProfile() {
+        this.success = null;
+        this.error = null;
+        this.errors = [];
 
-      const data = extractCustomFields(
-        serializeJSON(this.$refs.form as HTMLFormElement, this.initial, true),
-      );
+        const data = extractCustomFields(
+          serializeJSON(this.$refs.form as HTMLFormElement, this.initial, true),
+        );
 
-      const response = await update(data);
+        const response = await update(data);
 
-      if (response.success) {
-        this.success = true;
-        this.error = false;
+        if (response.success) {
+          this.success = true;
+          this.error = false;
 
-        setTimeout(() => {
-          this.success = null;
-          this.error = null;
-        }, FEEDBACK_TIMEOUT);
-      } else {
-        this.success = false;
-        this.error = true;
+          setTimeout(() => {
+            this.success = null;
+            this.error = null;
+          }, FEEDBACK_TIMEOUT);
+        } else {
+          this.success = false;
+          this.error = true;
 
-        this.errors = apiErrors(response.errors);
-      }
-    },
-  }));
+          this.errors = apiErrors(response.errors);
+        }
+      },
+    }),
+    { name: "SettingsForm", refs: ["form"] },
+  );
 }

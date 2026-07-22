@@ -17,6 +17,15 @@ declare global {
     STATE: string;
     TEAM: { id: number; name: string };
   }
+
+  interface ImportMetaEnv {
+    readonly DEV: boolean;
+    readonly PROD: boolean;
+  }
+
+  interface ImportMeta {
+    readonly env: ImportMetaEnv;
+  }
 }
 
 export {};
