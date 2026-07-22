@@ -19,10 +19,16 @@ export interface TooltipHandle {
   dispose(): void;
 }
 
+export interface ToastHandle {
+  show(): void;
+  onHidden(callback: () => void): void;
+}
+
 export interface UIAdapter {
   modal(target: Element | string): ModalHandle;
   tab(target: Element): TabHandle;
   tooltip(target: Element, options?: TooltipOptions): TooltipHandle;
+  toast(target: Element | string): ToastHandle;
 }
 
 let adapter: UIAdapter | null = null;

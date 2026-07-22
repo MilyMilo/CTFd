@@ -1,1 +1,0 @@
-import{m as a,C as r,r as m,a as o}from"./index.3b315be3.js";import{c as e,p as i}from"./subjects.63ca6b0b.js";import"./math.d234b3f6.js";import"./echarts.128204f2.js";window.Alpine=a;window.CTFd=r;m("TeamGraphs",e(i));o();

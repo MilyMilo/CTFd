@@ -1,8 +1,9 @@
-import { Modal, Tab, Tooltip } from "bootstrap";
+import { Modal, Tab, Toast, Tooltip } from "bootstrap";
 
 import type {
   ModalHandle,
   TabHandle,
+  ToastHandle,
   TooltipHandle,
   TooltipOptions,
   UIAdapter,
@@ -37,6 +38,17 @@ export const bootstrapUI: UIAdapter = {
   tab(target: Element): TabHandle {
     const tab = Tab.getOrCreateInstance(target);
     return { show: () => tab.show() };
+  },
+
+  toast(target: Element | string): ToastHandle {
+    const el = resolve(target);
+    const toast = Toast.getOrCreateInstance(el);
+
+    return {
+      show: () => toast.show(),
+      onHidden: callback =>
+        el.addEventListener("hidden.bs.toast", () => callback(), { once: true }),
+    };
   },
 
   tooltip(target: Element, options: TooltipOptions = {}): TooltipHandle {

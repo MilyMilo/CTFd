@@ -53,7 +53,7 @@ export default defineConfig({
         },
       },
       input: {
-        index: resolve(__dirname, "assets/js/index.js"),
+        index: resolve(__dirname, "assets/js/index.ts"),
         page: resolve(__dirname, "assets/js/page.ts"),
         setup: resolve(__dirname, "assets/js/setup.ts"),
         settings: resolve(__dirname, "assets/js/settings.ts"),
@@ -67,7 +67,7 @@ export default defineConfig({
         users_private: resolve(__dirname, "assets/js/users/private.ts"),
         users_list: resolve(__dirname, "assets/js/users/list.ts"),
         main: resolve(__dirname, "assets/scss/main.scss"),
-        color_mode_switcher: resolve(__dirname, "assets/js/color_mode_switcher.js"),
+        color_mode_switcher: resolve(__dirname, "assets/js/color_mode_switcher.ts"),
       },
     },
   },
