@@ -1,11 +1,11 @@
 {
   "assets/js/index.ts": {
-    "file": "assets/index.c95d9acc.js",
+    "file": "assets/index.e56a2627.js",
     "src": "assets/js/index.ts",
     "isEntry": true
   },
   "assets/js/page.ts": {
-    "file": "assets/page.912603cb.js",
+    "file": "assets/page.be338478.js",
     "src": "assets/js/page.ts",
     "isEntry": true,
     "imports": [
@@ -13,7 +13,7 @@
     ]
   },
   "assets/js/setup.ts": {
-    "file": "assets/setup.7f41f766.js",
+    "file": "assets/setup.b7cec559.js",
     "src": "assets/js/setup.ts",
     "isEntry": true,
     "imports": [
@@ -21,34 +21,36 @@
     ]
   },
   "assets/js/settings.ts": {
-    "file": "assets/settings.00a5e2a0.js",
+    "file": "assets/settings.74ddbf47.js",
     "src": "assets/js/settings.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_clipboard.598b04a2.js"
+      "_clipboard.23a5efd8.js",
+      "_errors.ae9dc1b2.js"
     ]
   },
   "assets/js/challenges.ts": {
-    "file": "assets/challenges.75050322.js",
+    "file": "assets/challenges.1b6c0617.js",
     "src": "assets/js/challenges.ts",
     "isEntry": true,
     "imports": [
-      "assets/js/index.ts"
+      "assets/js/index.ts",
+      "_errors.ae9dc1b2.js"
     ]
   },
   "assets/js/scoreboard.ts": {
-    "file": "assets/scoreboard.afd444cc.js",
+    "file": "assets/scoreboard.cdced9c4.js",
     "src": "assets/js/scoreboard.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_math.c4f0db39.js",
+      "_math.c851040f.js",
       "_echarts.128204f2.js"
     ]
   },
   "assets/js/notifications.ts": {
-    "file": "assets/notifications.f7a96048.js",
+    "file": "assets/notifications.3239bb60.js",
     "src": "assets/js/notifications.ts",
     "isEntry": true,
     "imports": [
@@ -56,30 +58,31 @@
     ]
   },
   "assets/js/teams/public.ts": {
-    "file": "assets/teams_public.59b1af50.js",
+    "file": "assets/teams_public.d9308ee2.js",
     "src": "assets/js/teams/public.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_subjects.ebd5f68e.js",
-      "_math.c4f0db39.js",
+      "_subjects.b7e90aa2.js",
+      "_math.c851040f.js",
       "_echarts.128204f2.js"
     ]
   },
   "assets/js/teams/private.ts": {
-    "file": "assets/teams_private.39485767.js",
+    "file": "assets/teams_private.f2d189d5.js",
     "src": "assets/js/teams/private.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_subjects.ebd5f68e.js",
-      "_clipboard.598b04a2.js",
-      "_math.c4f0db39.js",
+      "_subjects.b7e90aa2.js",
+      "_errors.ae9dc1b2.js",
+      "_clipboard.23a5efd8.js",
+      "_math.c851040f.js",
       "_echarts.128204f2.js"
     ]
   },
   "assets/js/teams/list.ts": {
-    "file": "assets/teams_list.674e2d9c.js",
+    "file": "assets/teams_list.e9086bee.js",
     "src": "assets/js/teams/list.ts",
     "isEntry": true,
     "imports": [
@@ -87,29 +90,29 @@
     ]
   },
   "assets/js/users/public.ts": {
-    "file": "assets/users_public.86b8a248.js",
+    "file": "assets/users_public.44ed4765.js",
     "src": "assets/js/users/public.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_subjects.ebd5f68e.js",
-      "_math.c4f0db39.js",
+      "_subjects.b7e90aa2.js",
+      "_math.c851040f.js",
       "_echarts.128204f2.js"
     ]
   },
   "assets/js/users/private.ts": {
-    "file": "assets/users_private.60e5213b.js",
+    "file": "assets/users_private.06de8cd4.js",
     "src": "assets/js/users/private.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_subjects.ebd5f68e.js",
-      "_math.c4f0db39.js",
+      "_subjects.b7e90aa2.js",
+      "_math.c851040f.js",
       "_echarts.128204f2.js"
     ]
   },
   "assets/js/users/list.ts": {
-    "file": "assets/users_list.ae8ed3a6.js",
+    "file": "assets/users_list.27083d2b.js",
     "src": "assets/js/users/list.ts",
     "isEntry": true,
     "imports": [
@@ -124,23 +127,27 @@
   "_echarts.128204f2.js": {
     "file": "assets/echarts.128204f2.js"
   },
-  "_clipboard.598b04a2.js": {
-    "file": "assets/clipboard.598b04a2.js",
+  "_clipboard.23a5efd8.js": {
+    "file": "assets/clipboard.23a5efd8.js",
     "imports": [
+      "_errors.ae9dc1b2.js",
       "assets/js/index.ts"
     ]
   },
-  "_math.c4f0db39.js": {
-    "file": "assets/math.c4f0db39.js",
+  "_errors.ae9dc1b2.js": {
+    "file": "assets/errors.ae9dc1b2.js"
+  },
+  "_math.c851040f.js": {
+    "file": "assets/math.c851040f.js",
     "imports": [
       "_echarts.128204f2.js"
     ]
   },
-  "_subjects.ebd5f68e.js": {
-    "file": "assets/subjects.ebd5f68e.js",
+  "_subjects.b7e90aa2.js": {
+    "file": "assets/subjects.b7e90aa2.js",
     "imports": [
-      "assets/js/index.ts",
-      "_math.c4f0db39.js"
+      "_math.c851040f.js",
+      "assets/js/index.ts"
     ]
   },
   "assets/scss/main.scss": {

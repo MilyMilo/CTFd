@@ -1,6 +1,7 @@
 import Alpine from "alpinejs";
 
 import CTFd from "../../index";
+import { apiErrors } from "../../utils/errors";
 import { component } from "../magics";
 import { TEAM_MODAL_EVENTS } from "./events";
 
@@ -23,9 +24,7 @@ export const CaptainMenu = component(() => ({
     const response = await CTFd.pages.teams.getInviteToken();
 
     if (!response.success) {
-      for (const key of Object.keys(response.errors)) {
-        alert(response.errors[key]);
-      }
+      alert(apiErrors(response.errors).join("\n"));
       return;
     }
 

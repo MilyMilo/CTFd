@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any -- API payloads are untyped
- * until ctfd-js is absorbed. */
-import { serializeJSON } from "@ctfdio/ctfd-js/forms";
-
-import { extractCustomFields } from "../../utils/forms";
+/* eslint-disable @typescript-eslint/no-explicit-any -- echarts option trees and
+ * operator-defined settings have no fixed shape. */
+import { extractCustomFields, serializeJSON } from "../../utils/forms";
+import { apiErrors } from "../../utils/errors";
 import { component } from "../magics";
 
 /** How long a success/error banner stays up before clearing itself. */
@@ -28,7 +27,7 @@ export function createProfileForm(update: (data: any) => Promise<any>) {
     errors: [] as string[],
 
     init() {
-      this.initial = serializeJSON(this.$refs.form);
+      this.initial = serializeJSON(this.$refs.form as HTMLFormElement);
     },
 
     async updateProfile() {
@@ -37,7 +36,7 @@ export function createProfileForm(update: (data: any) => Promise<any>) {
       this.errors = [];
 
       const data = extractCustomFields(
-        serializeJSON(this.$refs.form, this.initial, true),
+        serializeJSON(this.$refs.form as HTMLFormElement, this.initial, true),
       );
 
       const response = await update(data);
@@ -54,9 +53,7 @@ export function createProfileForm(update: (data: any) => Promise<any>) {
         this.success = false;
         this.error = true;
 
-        for (const key of Object.keys(response.errors)) {
-          this.errors.push(response.errors[key]);
-        }
+        this.errors = apiErrors(response.errors);
       }
     },
   }));

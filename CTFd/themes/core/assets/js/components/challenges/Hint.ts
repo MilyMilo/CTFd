@@ -1,5 +1,6 @@
 import CTFd from "../../index";
 import { addTargetBlank } from "../../utils/html";
+import { apiErrors } from "../../utils/errors";
 import { component } from "../magics";
 
 /** The `<details>` element a hint is rendered into. */
@@ -19,17 +20,16 @@ export const Hint = component(() => ({
     // Hint has some kind of prerequisite or access prevention
     if (response.errors) {
       event.target.open = false;
-      CTFd._functions.challenge.displayUnlockError(response);
+      this.showUnlockError(response.errors);
       return;
     }
 
     if (response.data.content) {
-      this.html = addTargetBlank(response.data.html);
+      this.html = addTargetBlank(response.data.html ?? "");
       return;
     }
 
-    const confirmed = await CTFd.pages.challenge.displayUnlock(this.id);
-    if (!confirmed) {
+    if (!this.confirmUnlock()) {
       event.target.open = false;
       return;
     }
@@ -37,11 +37,21 @@ export const Hint = component(() => ({
     const unlock = await CTFd.pages.challenge.loadUnlock(this.id);
     if (!unlock.success) {
       event.target.open = false;
-      CTFd._functions.challenge.displayUnlockError(unlock);
+      this.showUnlockError(unlock.errors ?? {});
       return;
     }
 
     const unlocked = await CTFd.pages.challenge.loadHint(this.id);
-    this.html = addTargetBlank(unlocked.data.html);
+    this.html = addTargetBlank(unlocked.data.html ?? "");
+  },
+
+  /** Override in a theme to replace the browser confirm dialog. */
+  confirmUnlock(): boolean {
+    return confirm("Are you sure you'd like to unlock this hint?");
+  },
+
+  /** Override in a theme to render unlock failures inline instead of alerting. */
+  showUnlockError(errors: Record<string, string | string[]>): void {
+    alert(apiErrors(errors).join("\n"));
   },
 }));

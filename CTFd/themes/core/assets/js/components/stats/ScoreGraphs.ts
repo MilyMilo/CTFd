@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any -- API payloads are untyped
- * until ctfd-js is absorbed. */
-import { colorHash } from "@ctfdio/ctfd-js/ui";
+/* eslint-disable @typescript-eslint/no-explicit-any -- echarts option trees and
+ * operator-defined settings have no fixed shape. */
+import { colorHash } from "../../utils/colors";
 
 import { embed } from "../../utils/graphs/echarts";
 import { getOption as getUserScoreOption } from "../../utils/graphs/echarts/userscore";

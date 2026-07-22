@@ -1,1 +1,0 @@
-import{m as r,C as a,r as e,a as o}from"./index.c95d9acc.js";import{c as s,d as m}from"./subjects.ebd5f68e.js";import"./math.c4f0db39.js";import"./echarts.128204f2.js";window.Alpine=r;window.CTFd=a;e("UserGraphs",s(m));o();

@@ -20,7 +20,6 @@
     "vite": "^5.1.2"
   },
   "dependencies": {
-    "@ctfdio/ctfd-js": "^0.0.13",
     "@fontsource/lato": "^5.0.18",
     "@fontsource/raleway": "^5.0.16",
     "@fortawesome/fontawesome-free": "^6.5.1",
@@ -28,9 +27,11 @@
     "alpinejs": "^3.13.3",
     "bootstrap": "~4.3.1",
     "codemirror": "~5.58.2",
+    "dayjs": "^1.11.21",
     "easymde": "^2.18.0",
     "echarts": "^5.4.3",
     "highlight.js": "^11.9.0",
+    "howler": "^2.2.4",
     "jquery": "^3.7.1",
     "markdown-it": "^14.0.0",
     "nunjucks": "^3.2.4",

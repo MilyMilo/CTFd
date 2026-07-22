@@ -1,5 +1,6 @@
 import CTFd from "../../index";
 import { ui } from "../../ui/adapter";
+import { apiErrors } from "../../utils/errors";
 import { component } from "../magics";
 
 export const TeamDisbandModal = component(() => ({
@@ -17,6 +18,6 @@ export const TeamDisbandModal = component(() => ({
       return;
     }
 
-    this.errors = response.errors[""];
+    this.errors = apiErrors(response.errors);
   },
 }));

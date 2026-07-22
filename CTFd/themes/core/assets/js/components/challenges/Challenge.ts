@@ -38,7 +38,7 @@ export const Challenge = component(() => ({
   getStyles() {
     const styles: Record<string, boolean> = { "modal-dialog": true };
     try {
-      const size = MODAL_SIZES[CTFd.config.themeSettings.challenge_window_size];
+      const size = MODAL_SIZES[CTFd.config.themeSettings.challenge_window_size ?? ""];
       if (size) {
         styles[size] = true;
       }
@@ -86,12 +86,9 @@ export const Challenge = component(() => ({
   },
 
   async showSolution() {
-    const solutionId = this.getSolutionId();
-    CTFd._functions.challenge.displaySolution = (solution: Record<string, any>) => {
-      this.solution = solution.html;
-      ui().tab(this.$el).show();
-    };
-    await CTFd.pages.challenge.displaySolution(solutionId);
+    const solution = await CTFd.pages.challenge.loadSolution(this.getSolutionId());
+    this.solution = solution.html;
+    ui().tab(this.$el).show();
   },
 
   getNextId() {
@@ -160,13 +157,7 @@ export const Challenge = component(() => ({
 
     // Decide whether to check for the solution
     if (this.getSolutionId() == null) {
-      if (
-        CTFd.pages.challenge.checkSolution(
-          this.getSolutionState(),
-          challengeStore().data,
-          status,
-        )
-      ) {
+      if (CTFd.pages.challenge.shouldCheckSolution(this.getSolutionState(), status)) {
         const data = await CTFd.pages.challenge.getSolution(this.id);
         this.setSolutionId(data.id);
       }

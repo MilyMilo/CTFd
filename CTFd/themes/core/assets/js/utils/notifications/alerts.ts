@@ -2,15 +2,20 @@ import Alpine from "alpinejs";
 
 import CTFd from "../../index";
 import { ui } from "../../ui/adapter";
+import { markRead } from "./read";
 
 export default () => {
   Alpine.store("modal", { title: "", html: "" });
 
-  CTFd._functions.events.eventAlert = (data: { id: number }) => {
-    Alpine.store("modal", data);
+  CTFd.events.onNotification(notification => {
+    if (notification.type !== "alert") {
+      return;
+    }
+
+    Alpine.store("modal", notification);
 
     const modal = ui().modal("[x-ref='modal']");
-    modal.onHidden(() => CTFd._functions.events.eventRead(data.id));
+    modal.onHidden(() => markRead(notification.id));
     modal.show();
-  };
+  });
 };

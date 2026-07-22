@@ -1,7 +1,7 @@
 import "./main";
 import CTFd from "../compat/CTFd";
 import $ from "jquery";
-import { htmlEntities } from "@ctfdio/ctfd-js/utils/html";
+import { htmlEntities } from "../utils/html";
 import { ezQuery } from "../compat/ezq";
 import "../compat/format";
 

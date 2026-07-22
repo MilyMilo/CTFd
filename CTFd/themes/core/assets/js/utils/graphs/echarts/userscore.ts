@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- echarts option trees and
  * CTFd API payloads are both untyped; annotating them here would be fiction. */
-import { colorHash } from "@ctfdio/ctfd-js/ui";
+import { colorHash } from "../../colors";
 import { cumulativeSum } from "../../math";
 import { mergeObjects } from "../../objects";
 import dayjs from "dayjs";

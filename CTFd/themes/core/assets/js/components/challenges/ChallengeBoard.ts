@@ -89,23 +89,20 @@ export const ChallengeBoard = component(() => ({
   },
 
   async loadChallenge(challengeId: string | number) {
-    await CTFd.pages.challenge.displayChallenge(
-      challengeId,
-      (challenge: Record<string, any>) => {
-        challenge.data.view = addTargetBlank(challenge.data.view);
-        challengeStore().data = challenge.data;
+    await CTFd.pages.challenge.displayChallenge(challengeId, challenge => {
+      challenge.view = addTargetBlank(challenge.view);
+      challengeStore().data = challenge;
 
-        // nextTick is required here because we're working in a callback
-        Alpine.nextTick(() => {
-          const modal = ui().modal("[x-ref='challengeWindow']");
-          modal.onHidden(() => {
-            // Remove location hash
-            history.replaceState(null, "", " ");
-          });
-          modal.show();
-          history.replaceState(null, "", `#${challenge.data.name}-${challengeId}`);
+      // nextTick is required here because we're working in a callback
+      Alpine.nextTick(() => {
+        const modal = ui().modal("[x-ref='challengeWindow']");
+        modal.onHidden(() => {
+          // Remove location hash
+          history.replaceState(null, "", " ");
         });
-      },
-    );
+        modal.show();
+        history.replaceState(null, "", `#${challenge.name}-${challengeId}`);
+      });
+    });
   },
 }));

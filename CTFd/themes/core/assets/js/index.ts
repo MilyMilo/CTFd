@@ -1,7 +1,4 @@
-import CTFd from "@ctfdio/ctfd-js";
-
-import dayjs from "dayjs";
-import advancedFormat from "dayjs/plugin/advancedFormat";
+import CTFd from "./api";
 
 import times from "./theme/times";
 import styles from "./theme/styles";
@@ -21,7 +18,6 @@ import eventRead from "./utils/notifications/read";
 import { LanguageForm } from "./components/settings/LanguageForm";
 import { register } from "./components/registry";
 
-dayjs.extend(advancedFormat);
 CTFd.init(window.init);
 
 // Themes replace this by calling registerUI() with their own adapter.

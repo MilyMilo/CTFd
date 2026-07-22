@@ -2,7 +2,7 @@ import $ from "jquery";
 import "../compat/json";
 import "../compat/format";
 import { ezToast, ezQuery } from "../compat/ezq";
-import { htmlEntities } from "@ctfdio/ctfd-js/utils/html";
+import { htmlEntities } from "../utils/html";
 import CTFd from "../compat/CTFd";
 import nunjucks from "nunjucks";
 
@@ -88,7 +88,6 @@ function renderSubmissionResponse(response, cb) {
 
 $(() => {
   $(".preview-challenge").click(function (_event) {
-    window.challenge = new Object();
     $.get(
       CTFd.config.urlRoot + "/api/v1/challenges/" + window.CHALLENGE_ID,
       function (response) {
@@ -103,12 +102,7 @@ $(() => {
               function (template_data) {
                 $("#challenge-window").empty();
                 const template = nunjucks.compile(template_data);
-                window.challenge.data = challenge_data;
-                window.challenge.preRender();
-
-                challenge_data["description"] = window.challenge.render(
-                  challenge_data["description"],
-                );
+                CTFd.challenge.preRender(challenge_data);
                 challenge_data["script_root"] = CTFd.config.urlRoot;
 
                 $("#challenge-window").append(template.render(challenge_data));
@@ -132,9 +126,9 @@ $(() => {
                   event.preventDefault();
                   $("#submit-key").addClass("disabled-button");
                   $("#submit-key").prop("disabled", true);
-                  window.challenge.submit(function (data) {
+                  CTFd.challenge.submit(true).then(function (data) {
                     renderSubmissionResponse(data);
-                  }, true);
+                  });
                   // Preview passed as true
                 });
 
@@ -144,7 +138,7 @@ $(() => {
                   }
                 });
 
-                window.challenge.postRender();
+                CTFd.challenge.postRender();
                 window.location.replace(
                   window.location.href.split("#")[0] + "#preview",
                 );

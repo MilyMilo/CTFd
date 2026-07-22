@@ -1,7 +1,8 @@
-import { serializeJSON } from "@ctfdio/ctfd-js/forms";
+import { serializeJSON } from "../../utils/forms";
 
 import CTFd from "../../index";
 import { ui } from "../../ui/adapter";
+import { apiErrors } from "../../utils/errors";
 import { component } from "../magics";
 
 export const TeamCaptainModal = component(() => ({
@@ -14,7 +15,7 @@ export const TeamCaptainModal = component(() => ({
   },
 
   async updateCaptain() {
-    const data = serializeJSON(this.$refs.form, null, true);
+    const data = serializeJSON(this.$refs.form as HTMLFormElement, null, true);
     const response = await CTFd.pages.teams.updateTeamSettings(data);
 
     if (response.success) {
@@ -24,8 +25,6 @@ export const TeamCaptainModal = component(() => ({
 
     this.success = false;
     this.error = true;
-    for (const key of Object.keys(response.errors)) {
-      this.errors.push(response.errors[key]);
-    }
+    this.errors = apiErrors(response.errors);
   },
 }));

@@ -1,4 +1,3 @@
-import "whatwg-fetch";
 import config from "./config";
 
 const fetch = window.fetch;

@@ -7,8 +7,9 @@ import fetch from "./fetch";
 import config from "./config";
 import API from "./api";
 import ezq from "./ezq";
-import { htmlEntities, createHtmlNode } from "@ctfdio/ctfd-js/utils/html";
-import { getScript } from "@ctfdio/ctfd-js/utils/ajax";
+import { challenge } from "./challenge";
+import { htmlEntities, createHtmlNode } from "../utils/html";
+import { getScript } from "../utils/ajax";
 
 const api = new API("/");
 const user = {};
@@ -71,6 +72,7 @@ const CTFd = {
   api,
   lib,
   _internal,
+  challenge,
   plugin,
 };
 

@@ -2,12 +2,17 @@ import Alpine from "alpinejs";
 
 import CTFd from "../../index";
 import { ui } from "../../ui/adapter";
+import { markRead } from "./read";
 
 export default () => {
   Alpine.store("toast", { title: "", html: "" });
 
-  CTFd._functions.events.eventToast = (data: { id: number }) => {
-    Alpine.store("toast", data);
+  CTFd.events.onNotification(notification => {
+    if (notification.type !== "toast") {
+      return;
+    }
+
+    Alpine.store("toast", notification);
 
     const element = document.querySelector("[x-ref='toast']");
     if (element === null) {
@@ -18,10 +23,10 @@ export default () => {
 
     // Dismissing counts as reading it; letting it time out does not.
     const close = element.querySelector("[data-bs-dismiss='toast']");
-    const handler = () => CTFd._functions.events.eventRead(data.id);
+    const handler = () => markRead(notification.id);
     close?.addEventListener("click", handler, { once: true });
 
     toast.onHidden(() => close?.removeEventListener("click", handler));
     toast.show();
-  };
+  });
 };

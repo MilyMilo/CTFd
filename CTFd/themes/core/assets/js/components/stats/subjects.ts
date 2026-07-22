@@ -1,12 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any -- API payloads are untyped
- * until ctfd-js is absorbed. */
+/* eslint-disable @typescript-eslint/no-explicit-any -- echarts option trees and
+ * operator-defined settings have no fixed shape. */
 import CTFd from "../../index";
 
 import type { ScoreSubject } from "./ScoreGraphs";
 
 /** The logged-in user, whose endpoints take the "me" pseudo-id. */
 export const currentUser: ScoreSubject = {
-  identity: () => ({ id: CTFd.user.id, name: CTFd.user.name }),
+  identity: () => ({ id: CTFd.user.id!, name: CTFd.user.name! }),
   solves: () => CTFd.pages.users.userSolves("me"),
   fails: () => CTFd.pages.users.userFails("me"),
   awards: () => CTFd.pages.users.userAwards("me"),
@@ -24,7 +24,7 @@ export const publicUser: ScoreSubject = {
 
 /** The logged-in user's team. */
 export const currentTeam: ScoreSubject = {
-  identity: () => ({ id: CTFd.team.id, name: CTFd.team.name }),
+  identity: () => ({ id: CTFd.team.id!, name: CTFd.team.name! }),
   solves: () => CTFd.pages.teams.teamSolves("me"),
   fails: () => CTFd.pages.teams.teamFails("me"),
   awards: () => CTFd.pages.teams.teamAwards("me"),

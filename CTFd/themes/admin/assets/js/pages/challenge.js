@@ -3,7 +3,7 @@ import $ from "jquery";
 import "../compat/json";
 import "bootstrap/js/dist/tab";
 import CTFd from "../compat/CTFd";
-import { htmlEntities } from "@ctfdio/ctfd-js/utils/html";
+import { htmlEntities } from "../utils/html";
 import { ezQuery, ezAlert, ezToast } from "../compat/ezq";
 import { default as helpers } from "../compat/helpers";
 import { bindMarkdownEditors } from "../styles";
@@ -20,7 +20,7 @@ import SolutionEditor from "../components/solution/SolutionEditor.vue";
 import RatingsViewer from "../components/ratings/RatingsViewer.vue";
 
 function loadChalTemplate(challenge) {
-  CTFd._internal.challenge = {};
+  CTFd.challenge.reset();
   $.getScript(CTFd.config.urlRoot + challenge.scripts.view, function () {
     let template_data = challenge.create;
     $("#create-chal-entry-div").html(template_data);
