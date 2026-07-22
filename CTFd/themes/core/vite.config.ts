@@ -14,14 +14,24 @@ function entrypoints(): Record<string, string> {
   const inputs: Record<string, string> = {};
 
   for (const dir of dirs) {
+    const section = dir.replace("assets/js", "").replace("/", "");
+
     for (const file of readdirSync(resolve(__dirname, dir))) {
+      // lib.ts is the package entry and pages.ts is a shared module; neither is
+      // a page the server serves.
       if (!file.endsWith(".ts") || file.endsWith(".test.ts")) continue;
-      const path = `${dir}/${file}`;
-      inputs[path] = resolve(__dirname, path);
+      if (file === "lib.ts" || file === "pages.ts") continue;
+
+      const base = file.replace(/\.ts$/, "");
+      // The key names the emitted chunk, so it stays flat: a key containing
+      // slashes nests the output, and CSS emitted under assets/scss/ would no
+      // longer resolve its url(../webfonts/...) references.
+      const name = section ? `${section}_${base}` : base;
+      inputs[name] = resolve(__dirname, `${dir}/${file}`);
     }
   }
 
-  inputs["assets/scss/main.scss"] = resolve(__dirname, "assets/scss/main.scss");
+  inputs.main = resolve(__dirname, "assets/scss/main.scss");
   return inputs;
 }
 

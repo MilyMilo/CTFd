@@ -5,11 +5,11 @@
   "scripts": {
     "dev": "vite build --watch --mode=development",
     "build": "vite build",
+    "build:lib": "tsc -p tsconfig.build.json",
     "format": "prettier --write assets/",
     "lint": "prettier --check assets/ && yarn typecheck",
     "typecheck": "tsc --noEmit",
-    "test": "node --test \"assets/js/**/*.test.ts\"",
-    "build:lib": "tsc -p tsconfig.build.json",
+    "test": "node --test 'assets/js/**/*.test.ts'",
     "prepack": "yarn build:lib"
   },
   "dependencies": {
