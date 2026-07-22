@@ -8,7 +8,7 @@
  */
 
 // Page bootstrap
-export { registerPage, page } from "./pages.js";
+export { registerPage, startPage } from "./pages.js";
 export type { PageName } from "./pages.js";
 
 // Component composition

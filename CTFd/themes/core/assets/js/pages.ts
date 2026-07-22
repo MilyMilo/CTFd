@@ -94,12 +94,12 @@ export function registerPage(name: PageName): void {
  * A theme that changes nothing about a page needs only:
  *
  *     import "./index.js";
- *     page("challenges");
+ *     startPage("challenges");
  *
  * `customize` runs after registration and before mount, which is where a theme
  * calls override() or registers components of its own.
  */
-export function page(name: PageName, customize?: () => void): void {
+export function startPage(name: PageName, customize?: () => void): void {
   registerPage(name);
   customize?.();
   mount();

@@ -17,7 +17,6 @@
     "@fontsource/raleway": "^4.5.3",
     "@fortawesome/fontawesome-free": "6.5.1",
     "@popperjs/core": "^2.11.4",
-    "alpinejs": "^3.9.1",
     "bootstrap": "^5.3.3",
     "bootstrap-multimodal": "~1.0.4",
     "dayjs": "^1.11.0",
@@ -30,6 +29,7 @@
     "@types/bootstrap": "^5.2.11",
     "@types/node": "^26.1.1",
     "@vitejs/plugin-vue": "^6.0.8",
+    "alpinejs": "^3.9.1",
     "prettier": "^3.2.5",
     "rollup-plugin-copy": "^3.4.0",
     "sass": "^1.101.3",
@@ -77,5 +77,8 @@
   ],
   "sideEffects": [
     "*.scss"
-  ]
+  ],
+  "peerDependencies": {
+    "alpinejs": "^3.9.1"
+  }
 }

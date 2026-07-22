@@ -1,5 +1,5 @@
-import { page } from "../pages.js";
+import { startPage } from "../pages.js";
 
 import "../index.js";
 
-page("teamsPublic");
+startPage("teamsPublic");
