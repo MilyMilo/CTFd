@@ -1,14 +1,5 @@
-import Alpine from "alpinejs";
+import { page } from "./pages.js";
 
-import CTFd from "./index.js";
-import { mount, register } from "./components/registry.js";
-import { ScoreboardDetail } from "./components/scoreboard/ScoreboardDetail.js";
-import { ScoreboardList } from "./components/scoreboard/ScoreboardList.js";
+import "./index.js";
 
-window.Alpine = Alpine;
-window.CTFd = CTFd;
-
-register("ScoreboardDetail", ScoreboardDetail);
-register("ScoreboardList", ScoreboardList);
-
-mount();
+page("scoreboard");

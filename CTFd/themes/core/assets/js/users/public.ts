@@ -1,13 +1,5 @@
-import Alpine from "alpinejs";
+import { page } from "../pages.js";
 
-import CTFd from "../index.js";
-import { createScoreGraphs } from "../components/stats/ScoreGraphs.js";
-import { publicUser } from "../components/stats/subjects.js";
-import { mount, register } from "../components/registry.js";
+import "../index.js";
 
-window.Alpine = Alpine;
-window.CTFd = CTFd;
-
-register("UserGraphs", createScoreGraphs(publicUser));
-
-mount();
+page("usersPublic");

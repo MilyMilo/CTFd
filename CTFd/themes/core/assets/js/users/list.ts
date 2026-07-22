@@ -1,9 +1,5 @@
-import Alpine from "alpinejs";
+import { page } from "../pages.js";
 
-import CTFd from "../index.js";
-import { mount } from "../components/registry.js";
+import "../index.js";
 
-window.CTFd = CTFd;
-window.Alpine = Alpine;
-
-mount();
+page("usersList");

@@ -7,6 +7,10 @@
  * core theme's own bootstrap.)
  */
 
+// Page bootstrap
+export { registerPage, page } from "./pages.js";
+export type { PageName } from "./pages.js";
+
 // Component composition
 export {
   component,
@@ -71,6 +75,13 @@ export { TeamDisbandModal } from "./components/teams/TeamDisbandModal.js";
 export { TeamEditModal } from "./components/teams/TeamEditModal.js";
 export { TeamInviteModal } from "./components/teams/TeamInviteModal.js";
 export { TEAM_MODAL_EVENTS } from "./components/teams/events.js";
+
+// Page bootstrap helpers. A theme calls these from its own entry if it wants
+// core's notification behaviour; they are not run on import.
+export { default as initNotificationRead } from "./utils/notifications/read.js";
+export { default as initNotificationAlerts } from "./utils/notifications/alerts.js";
+export { default as initNotificationToasts } from "./utils/notifications/toasts.js";
+export { markRead } from "./utils/notifications/read.js";
 
 // Helpers a theme is likely to reuse
 export { apiErrors } from "./utils/errors.js";

@@ -1,12 +1,5 @@
-import Alpine from "alpinejs";
+import { page } from "./pages.js";
 
-import CTFd from "./index.js";
-import { mount, register } from "./components/registry.js";
-import { SetupForm } from "./components/setup/SetupForm.js";
+import "./index.js";
 
-window.Alpine = Alpine;
-window.CTFd = CTFd;
-
-register("SetupForm", SetupForm);
-
-mount();
+page("setup");

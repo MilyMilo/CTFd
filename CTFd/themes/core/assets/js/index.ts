@@ -1,3 +1,5 @@
+import Alpine from "alpinejs";
+
 import CTFd from "./api/index.js";
 
 import times from "./theme/times.js";
@@ -17,6 +19,10 @@ import eventRead from "./utils/notifications/read.js";
 
 import { LanguageForm } from "./components/settings/LanguageForm.js";
 import { register } from "./components/registry.js";
+
+// Plugin view.js scripts are classic scripts and reach these off window.
+window.CTFd = CTFd;
+window.Alpine = Alpine;
 
 CTFd.init(window.init);
 
