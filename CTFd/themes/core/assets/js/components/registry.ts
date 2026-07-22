@@ -2,9 +2,11 @@ import Alpine from "alpinejs";
 
 import { extendComponent } from "./extend";
 import type { ComponentFactory } from "./extend";
+import { component } from "./magics";
+import type { Magics } from "./magics";
 
-export { extendComponent };
-export type { ComponentFactory };
+export { extendComponent, component };
+export type { ComponentFactory, Magics };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- see extend.ts
 const registry = new Map<string, ComponentFactory<any>>();
@@ -23,7 +25,7 @@ export function register<T extends object>(
  */
 export function override<B extends object, E extends object>(
   name: string,
-  overrides: (parent: B) => E & ThisType<B & E>,
+  overrides: (parent: B) => E & ThisType<B & E & Magics>,
 ): void {
   const base = registry.get(name);
   if (base === undefined) {

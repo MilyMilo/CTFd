@@ -3,6 +3,8 @@
  * `x-data="Component(...)"`. `any[]` keeps factories bivariant so a concrete
  * component can be stored in the registry without an unsound cast. */
 
+import type { Magics } from "./magics";
+
 export type ComponentFactory<T extends object = Record<string, unknown>> = (
   ...args: any[]
 ) => T;
@@ -40,8 +42,9 @@ export type ComponentFactory<T extends object = Record<string, unknown>> = (
 export function extendComponent<B extends object, E extends object>(
   base: ComponentFactory<B>,
   // `ThisType` types `this` inside the returned literal's methods as the merged
-  // component, so overrides can reach inherited fields with full inference.
-  overrides: (parent: B) => E & ThisType<B & E>,
+  // component plus Alpine's magics, so overrides can reach inherited fields and
+  // `$refs`/`$dispatch` with full inference.
+  overrides: (parent: B) => E & ThisType<B & E & Magics>,
 ): ComponentFactory<B & E> {
   return (...args: any[]) => {
     const parent = base(...args);
