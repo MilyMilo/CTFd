@@ -36,7 +36,7 @@
             {% with form = Forms.self.SettingsForm(language=language, country=country) %}
               <form
                   method="post" accept-charset="utf-8" autocomplete="off" role="form"
-                  x-data="SettingsForm"
+                  x-data="SettingsForm" x-ref="form"
                   @submit.prevent="updateProfile()"
                   class="form-horizontal"
               >
@@ -121,7 +121,7 @@
           <div class="tab-pane fade" id="tokens" role="tabpanel">
 
             {% with form = Forms.self.TokensForm() %}
-              <form method="POST" x-data="TokensForm" @submit.prevent="generateToken()" class="mb-3">
+              <form method="POST" x-data="TokensForm" x-ref="form" @submit.prevent="generateToken()" class="mb-3">
                 <div class="modal fade" tabindex="-1" x-ref="tokenModal">
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -262,5 +262,5 @@
 {% endblock %}
 
 {% block scripts %}
-  {{ Assets.js("assets/js/settings.js") }}
+  {{ Assets.js("assets/js/settings.ts") }}
 {% endblock %}

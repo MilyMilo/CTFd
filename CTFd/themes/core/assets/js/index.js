@@ -18,13 +18,17 @@ import eventAlerts from "./utils/notifications/alerts";
 import eventToasts from "./utils/notifications/toasts";
 import eventRead from "./utils/notifications/read";
 
-import "./components/language";
+import { LanguageForm } from "./components/LanguageForm";
+import { register } from "./components/registry";
 
 dayjs.extend(advancedFormat);
 CTFd.init(window.init);
 
 // Themes replace this by calling registerUI() with their own adapter.
 registerUI(bootstrapUI);
+
+// Present in the navbar on every page, so registered for all entrypoints.
+register("LanguageForm", LanguageForm);
 
 (() => {
   styles();

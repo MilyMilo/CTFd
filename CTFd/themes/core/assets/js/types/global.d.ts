@@ -11,6 +11,11 @@ declare global {
     scoreboardChartOptions?: Record<string, any>;
     teamScoreGraphChartOptions?: Record<string, any>;
     userScoreGraphChartOptions?: Record<string, any>;
+    /** Set by the public profile templates. */
+    USER: { id: number; name: string };
+    /** OAuth state passed to the MLC setup integration. */
+    STATE: string;
+    TEAM: { id: number; name: string };
   }
 }
 

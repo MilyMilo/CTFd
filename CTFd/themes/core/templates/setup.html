@@ -67,7 +67,7 @@
 					<div class="tab-pane fade show active" id="general" role="tabpanel">
 						<div class="mb-3">
 							<b>{{ form.ctf_name.label }}</b>
-							{{ form.ctf_name(class="form-control") }}
+							{{ form.ctf_name(class="form-control", **{"x-ref": "ctfName"}) }}
 							<small class="form-text text-muted">
 								{{ form.ctf_name.description }}
 							</small>
@@ -75,7 +75,7 @@
 
 						<div class="mb-3">
 							<b>{{ form.ctf_description.label }}</b>
-							{{ form.ctf_description(class="form-control", rows="5") }}
+							{{ form.ctf_description(class="form-control", rows="5", **{"x-ref": "ctfDescription"}) }}
 							<small class="form-text text-muted">
 								{{ form.ctf_description.description }}
 							</small>
@@ -228,7 +228,7 @@
 
 						<div class="mb-3 form-check">
 							<label class="form-check-label">
-								<input class="form-check-input" type="checkbox" value="" id="newsletter-checkbox" checked>
+								<input class="form-check-input" type="checkbox" value="" id="newsletter-checkbox" x-ref="newsletter" checked>
 								{% trans %}Subscribe email address to the CTFd LLC Newsletter for news and updates{% endtrans %}
 							</label>
 						</div>
@@ -278,9 +278,9 @@
 							<b>{{ form.theme_color.label }}</b>
 							<div class="row">
 								<div class="d-inline-block">
-									{{ form.theme_color(id="config-color-input") }}
+									{{ form.theme_color(id="config-color-input", **{"x-ref": "colorInput"}) }}
 									<div class="btn-group">
-										<input type="color" id="config-color-picker" class="pr-1" style="width: 100px; height: 30px;" value="" @input="setThemeColor">
+										<input type="color" id="config-color-picker" x-ref="colorPicker" class="pr-1" style="width: 100px; height: 30px;" value="" @input="setThemeColor">
 									</div>
 									<div class="btn-group">
 										<button type="button" id="config-color-reset" @click="resetThemeColor">Reset</button>
@@ -303,15 +303,15 @@
 							<div class="row">
 								<div class="col-md-4">
 									<label>{% trans %}Date{% endtrans %}</label>
-									<input class="form-control" id="start-date" type="date" placeholder="yyyy-mm-dd" data-preview="#start" @click="processDateTime('start')"/>
+									<input class="form-control" id="start-date" x-ref="startDate" type="date" placeholder="yyyy-mm-dd" data-preview="#start" @click="processDateTime('start')"/>
 								</div>
 								<div class="col-md-4">
 									<label>{% trans %}Time{% endtrans %}</label>
-									<input class="form-control" id="start-time" type="time" placeholder="hh:mm" data-preview="#start" @click="processDateTime('start')"/>
+									<input class="form-control" id="start-time" x-ref="startTime" type="time" placeholder="hh:mm" data-preview="#start" @click="processDateTime('start')"/>
 								</div>
 								<div class="col-md-4">
 									<label>UTC Preview</label>
-									{{ form.start(class="form-control", id="start-preview", readonly=True) }}
+									{{ form.start(class="form-control", id="start-preview", readonly=True, **{"x-ref": "startPreview"}) }}
 								</div>
 							</div>
 							<small class="form-text text-muted">
@@ -324,15 +324,15 @@
 							<div class="row">
 								<div class="col-md-4">
 									<label>{% trans %}Date{% endtrans %}</label>
-									<input class="form-control" id="end-date" type="date" placeholder="yyyy-mm-dd" data-preview="#end" @click="processDateTime('end')"/>
+									<input class="form-control" id="end-date" x-ref="endDate" type="date" placeholder="yyyy-mm-dd" data-preview="#end" @click="processDateTime('end')"/>
 								</div>
 								<div class="col-md-4">
 									<label>{% trans %}Time{% endtrans %}</label>
-									<input class="form-control" id="end-time" type="time" placeholder="hh:mm" data-preview="#end" @click="processDateTime('end')"/>
+									<input class="form-control" id="end-time" x-ref="endTime" type="time" placeholder="hh:mm" data-preview="#end" @click="processDateTime('end')"/>
 								</div>
 								<div class="col-md-4">
 									<label>{% trans %}UTC Preview{% endtrans %}</label>
-									{{ form.end(class="form-control", id="end-preview", readonly=True) }}
+									{{ form.end(class="form-control", id="end-preview", readonly=True, **{"x-ref": "endPreview"}) }}
 								</div>
 							</div>
 							<small class="form-text text-muted">
@@ -357,7 +357,7 @@
 						<div class="mb-3">
 							<b>MajorLeagueCyber Integration</b>
 							<p>MajorLeagueCyber (MLC) is a cyber security event tracker written and maintained by the developers of CTFd.</p>
-							<button type="button" id="integration-mlc" class="btn btn-primary btn-block" @click="mlcSetup()">
+							<button type="button" id="integration-mlc" x-ref="mlcButton" class="btn btn-primary btn-block" @click="mlcSetup()">
 								Setup
 							</button>
 						</div>
@@ -384,5 +384,5 @@
 <script>
 	var STATE = {{ state | tojson }};
 </script>
-{{ Assets.js("assets/js/setup.js") }}
+{{ Assets.js("assets/js/setup.ts") }}
 {% endblock %}

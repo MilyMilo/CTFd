@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div id="team-edit-modal" class="modal fade">
+  <div id="team-edit-modal" class="modal fade" x-data="TeamEditModal" @open-team-edit.window="show()">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -10,10 +10,10 @@
           </button>
         </div>
 
-        <div class="modal-body clearfix" x-data="TeamEditModal">
+        <div class="modal-body clearfix">
           {% with form = Forms.teams.TeamSettingsForm(obj=team) %}
             {% from "macros/forms.html" import render_extra_fields %}
-            <form id="team-info-form" method="POST" @submit.prevent="updateProfile()">
+            <form id="team-info-form" method="POST" x-ref="form" @submit.prevent="updateProfile()">
 
               <div class="mb-2">
                 <b>{{ form.name.label(class="mb-2") }}</b>
@@ -97,7 +97,7 @@
     </div>
   </div>
 
-  <div id="team-captain-modal" x-data="TeamCaptainModal" class="modal fade">
+  <div id="team-captain-modal" x-data="TeamCaptainModal" class="modal fade" @open-team-captain.window="show()">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -107,7 +107,7 @@
         </div>
         <div class="modal-body clearfix">
           {% with form = Forms.teams.TeamCaptainForm(captain_id=team.captain_id) %}
-            <form id="team-captain-form" method="POST" @submit.prevent="updateCaptain()">
+            <form id="team-captain-form" method="POST" x-ref="form" @submit.prevent="updateCaptain()">
               <div class="mb-3">
                 {{ form.captain_id.label(class="form-label") }}
                 {% for member in team.members %}
@@ -145,7 +145,7 @@
     </div>
   </div>
 
-  <div id="team-invite-modal" x-data="TeamInviteModal" class="modal fade">
+  <div id="team-invite-modal" x-data="TeamInviteModal" class="modal fade" @open-team-invite.window="show()">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -181,7 +181,7 @@
     </div>
   </div>
 
-  <div id="team-disband-modal" x-data="TeamDisbandModal" class="modal fade">
+  <div id="team-disband-modal" x-data="TeamDisbandModal" class="modal fade" @open-team-disband.window="show()">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -496,5 +496,5 @@
 
       window.team_captain = {{ (user.id == team.captain_id) | tojson }};
   </script>
-  {{ Assets.js("assets/js/teams/private.js") }}
+  {{ Assets.js("assets/js/teams/private.ts") }}
 {% endblock %}
