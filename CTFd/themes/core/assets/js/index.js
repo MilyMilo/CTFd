@@ -7,6 +7,9 @@ import times from "./theme/times";
 import styles from "./theme/styles";
 import highlight from "./theme/highlight";
 
+import { registerUI } from "./ui/adapter";
+import { bootstrapUI } from "./ui/bootstrap";
+
 import alerts from "./utils/alerts";
 import tooltips from "./utils/tooltips";
 import collapse from "./utils/collapse";
@@ -19,6 +22,9 @@ import "./components/language";
 
 dayjs.extend(advancedFormat);
 CTFd.init(window.init);
+
+// Themes replace this by calling registerUI() with their own adapter.
+registerUI(bootstrapUI);
 
 (() => {
   styles();

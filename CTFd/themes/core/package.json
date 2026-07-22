@@ -6,7 +6,9 @@
     "dev": "vite build --watch --mode=development",
     "build": "vite build",
     "format": "prettier --write assets/",
-    "lint": "prettier --check assets/",
+    "lint": "prettier --check assets/ && yarn typecheck",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"assets/js/**/*.test.ts\"",
     "verify": "vite build && git add -N -- static && git diff --exit-code -- static"
   },
   "dependencies": {
@@ -24,10 +26,14 @@
     "vue": "^3.2.25"
   },
   "devDependencies": {
+    "@types/alpinejs": "^3.13.11",
+    "@types/bootstrap": "^5.2.11",
+    "@types/node": "^26.1.1",
     "@vitejs/plugin-vue": "^3.0.1",
     "prettier": "^3.2.5",
     "rollup-plugin-copy": "^3.4.0",
     "sass": "^1.49.7",
+    "typescript": "^7.0.2",
     "vite": "^3.0.5"
   }
 }
