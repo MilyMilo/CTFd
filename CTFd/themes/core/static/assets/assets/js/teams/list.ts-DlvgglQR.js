@@ -1,0 +1,1 @@
+import e,{l as t,t as n}from"../index.ts-BzqCyPN_.js";window.CTFd=e,window.Alpine=t,n();

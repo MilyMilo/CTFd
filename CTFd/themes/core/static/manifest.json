@@ -1,6 +1,6 @@
 {
-  "_clipboard-Dx3G-KT_.js": {
-    "file": "assets/clipboard-Dx3G-KT_.js",
+  "_clipboard-auvgawWd.js": {
+    "file": "assets/clipboard-auvgawWd.js",
     "name": "clipboard",
     "imports": [
       "assets/js/index.ts",
@@ -29,8 +29,8 @@
     "file": "assets/rolldown-runtime-QTnfLwEv.js",
     "name": "rolldown-runtime"
   },
-  "_subjects-C4c0C_eN.js": {
-    "file": "assets/subjects-C4c0C_eN.js",
+  "_subjects-JARw5LS5.js": {
+    "file": "assets/subjects-JARw5LS5.js",
     "name": "subjects",
     "imports": [
       "_rolldown-runtime-QTnfLwEv.js",
@@ -39,8 +39,8 @@
     ]
   },
   "assets/js/challenges.ts": {
-    "file": "assets/challenges-D8IfIubz.js",
-    "name": "challenges",
+    "file": "assets/assets/js/challenges.ts-D16buhgx.js",
+    "name": "assets/js/challenges.ts",
     "src": "assets/js/challenges.ts",
     "isEntry": true,
     "imports": [
@@ -49,14 +49,14 @@
     ]
   },
   "assets/js/colorModeSwitcher.ts": {
-    "file": "assets/colorModeSwitcher-CReBgCbQ.js",
-    "name": "colorModeSwitcher",
+    "file": "assets/assets/js/colorModeSwitcher.ts-CReBgCbQ.js",
+    "name": "assets/js/colorModeSwitcher.ts",
     "src": "assets/js/colorModeSwitcher.ts",
     "isEntry": true
   },
   "assets/js/index.ts": {
-    "file": "assets/index-CGcUvuL1.js",
-    "name": "index",
+    "file": "assets/assets/js/index.ts-BzqCyPN_.js",
+    "name": "assets/js/index.ts",
     "src": "assets/js/index.ts",
     "isEntry": true,
     "imports": [
@@ -64,8 +64,8 @@
     ]
   },
   "assets/js/notifications.ts": {
-    "file": "assets/notifications-BsbTw-bL.js",
-    "name": "notifications",
+    "file": "assets/assets/js/notifications.ts-SzZFSBcA.js",
+    "name": "assets/js/notifications.ts",
     "src": "assets/js/notifications.ts",
     "isEntry": true,
     "imports": [
@@ -73,8 +73,8 @@
     ]
   },
   "assets/js/page.ts": {
-    "file": "assets/page-BmF6EYgu.js",
-    "name": "page",
+    "file": "assets/assets/js/page.ts-ClcRiB8j.js",
+    "name": "assets/js/page.ts",
     "src": "assets/js/page.ts",
     "isEntry": true,
     "imports": [
@@ -82,8 +82,8 @@
     ]
   },
   "assets/js/scoreboard.ts": {
-    "file": "assets/scoreboard-8i_G-k0Q.js",
-    "name": "scoreboard",
+    "file": "assets/assets/js/scoreboard.ts-8ebMQTKj.js",
+    "name": "assets/js/scoreboard.ts",
     "src": "assets/js/scoreboard.ts",
     "isEntry": true,
     "imports": [
@@ -93,18 +93,18 @@
     ]
   },
   "assets/js/settings.ts": {
-    "file": "assets/settings-C0pi1WtI.js",
-    "name": "settings",
+    "file": "assets/assets/js/settings.ts-JJz1xWOj.js",
+    "name": "assets/js/settings.ts",
     "src": "assets/js/settings.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_clipboard-Dx3G-KT_.js"
+      "_clipboard-auvgawWd.js"
     ]
   },
   "assets/js/setup.ts": {
-    "file": "assets/setup-B089kAe0.js",
-    "name": "setup",
+    "file": "assets/assets/js/setup.ts-CLZQV5py.js",
+    "name": "assets/js/setup.ts",
     "src": "assets/js/setup.ts",
     "isEntry": true,
     "imports": [
@@ -113,8 +113,8 @@
     ]
   },
   "assets/js/teams/list.ts": {
-    "file": "assets/teams_list-BmF6EYgu.js",
-    "name": "teams_list",
+    "file": "assets/assets/js/teams/list.ts-DlvgglQR.js",
+    "name": "assets/js/teams/list.ts",
     "src": "assets/js/teams/list.ts",
     "isEntry": true,
     "imports": [
@@ -122,30 +122,30 @@
     ]
   },
   "assets/js/teams/private.ts": {
-    "file": "assets/teams_private-DM_1pQeF.js",
-    "name": "teams_private",
+    "file": "assets/assets/js/teams/private.ts-Cbb44IoD.js",
+    "name": "assets/js/teams/private.ts",
     "src": "assets/js/teams/private.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_clipboard-Dx3G-KT_.js",
       "_errors-CC_NAmrO.js",
-      "_subjects-C4c0C_eN.js"
+      "_clipboard-auvgawWd.js",
+      "_subjects-JARw5LS5.js"
     ]
   },
   "assets/js/teams/public.ts": {
-    "file": "assets/teams_public-B9GMARIb.js",
-    "name": "teams_public",
+    "file": "assets/assets/js/teams/public.ts-BGDusZab.js",
+    "name": "assets/js/teams/public.ts",
     "src": "assets/js/teams/public.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_subjects-C4c0C_eN.js"
+      "_subjects-JARw5LS5.js"
     ]
   },
   "assets/js/users/list.ts": {
-    "file": "assets/users_list-BmF6EYgu.js",
-    "name": "users_list",
+    "file": "assets/assets/js/users/list.ts-DlvgglQR.js",
+    "name": "assets/js/users/list.ts",
     "src": "assets/js/users/list.ts",
     "isEntry": true,
     "imports": [
@@ -153,30 +153,30 @@
     ]
   },
   "assets/js/users/private.ts": {
-    "file": "assets/users_private-CQykl5Xx.js",
-    "name": "users_private",
+    "file": "assets/assets/js/users/private.ts-CpV41jQO.js",
+    "name": "assets/js/users/private.ts",
     "src": "assets/js/users/private.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_subjects-C4c0C_eN.js"
+      "_subjects-JARw5LS5.js"
     ]
   },
   "assets/js/users/public.ts": {
-    "file": "assets/users_public-qc2RG9bt.js",
-    "name": "users_public",
+    "file": "assets/assets/js/users/public.ts-PnwSzure.js",
+    "name": "assets/js/users/public.ts",
     "src": "assets/js/users/public.ts",
     "isEntry": true,
     "imports": [
       "assets/js/index.ts",
-      "_subjects-C4c0C_eN.js"
+      "_subjects-JARw5LS5.js"
     ]
   },
   "assets/scss/main.scss": {
-    "file": "assets/main-B_VAYwoo.css",
-    "name": "main",
+    "file": "assets/assets/scss/main-B_VAYwoo.css",
+    "name": "assets/scss/main.scss",
     "names": [
-      "main.css"
+      "assets/scss/main.css"
     ],
     "src": "assets/scss/main.scss",
     "isEntry": true

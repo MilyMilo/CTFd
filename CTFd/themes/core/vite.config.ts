@@ -1,9 +1,29 @@
+import { readdirSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { defineConfig } from "vite";
 import copy from "rollup-plugin-copy";
 
-const entry = (name: string) => resolve(__dirname, name);
+/**
+ * Page entrypoints are the .ts files directly under assets/js and under its
+ * per-section folders. Everything else (components, api, utils) is imported by
+ * them rather than being an entry of its own.
+ */
+function entrypoints(): Record<string, string> {
+  const dirs = ["assets/js", "assets/js/teams", "assets/js/users"];
+  const inputs: Record<string, string> = {};
+
+  for (const dir of dirs) {
+    for (const file of readdirSync(resolve(__dirname, dir))) {
+      if (!file.endsWith(".ts") || file.endsWith(".test.ts")) continue;
+      const path = `${dir}/${file}`;
+      inputs[path] = resolve(__dirname, path);
+    }
+  }
+
+  inputs["assets/scss/main.scss"] = resolve(__dirname, "assets/scss/main.scss");
+  return inputs;
+}
 
 export default defineConfig({
   resolve: {
@@ -25,7 +45,7 @@ export default defineConfig({
     manifest: "manifest.json",
     outDir: "static",
     emptyOutDir: true,
-    rollupOptions: {
+    rolldownOptions: {
       plugins: [
         copy({
           targets: [
@@ -59,23 +79,7 @@ export default defineConfig({
           }
         },
       },
-      input: {
-        index: entry("assets/js/index.ts"),
-        page: entry("assets/js/page.ts"),
-        setup: entry("assets/js/setup.ts"),
-        settings: entry("assets/js/settings.ts"),
-        challenges: entry("assets/js/challenges.ts"),
-        scoreboard: entry("assets/js/scoreboard.ts"),
-        notifications: entry("assets/js/notifications.ts"),
-        teams_public: entry("assets/js/teams/public.ts"),
-        teams_private: entry("assets/js/teams/private.ts"),
-        teams_list: entry("assets/js/teams/list.ts"),
-        users_public: entry("assets/js/users/public.ts"),
-        users_private: entry("assets/js/users/private.ts"),
-        users_list: entry("assets/js/users/list.ts"),
-        main: entry("assets/scss/main.scss"),
-        colorModeSwitcher: entry("assets/js/colorModeSwitcher.ts"),
-      },
+      input: entrypoints(),
     },
   },
 });

@@ -1,6 +1,6 @@
 {
-  "_CommentBox-CkZtICyq.js": {
-    "file": "assets/CommentBox-CkZtICyq.js",
+  "_CommentBox-Ckws3YAz.js": {
+    "file": "assets/CommentBox-Ckws3YAz.js",
     "name": "CommentBox",
     "imports": [
       "_rolldown-runtime-aKtaBQYM.js",
@@ -21,8 +21,8 @@
       "_rolldown-runtime-aKtaBQYM.js"
     ]
   },
-  "_graphs-Ce9Mt1yq.js": {
-    "file": "assets/graphs-Ce9Mt1yq.js",
+  "_graphs-ogHqCKAE.js": {
+    "file": "assets/graphs-ogHqCKAE.js",
     "name": "graphs",
     "imports": [
       "_rolldown-runtime-aKtaBQYM.js",
@@ -41,8 +41,8 @@
     "file": "assets/rolldown-runtime-aKtaBQYM.js",
     "name": "rolldown-runtime"
   },
-  "_tab-DYnH3x-i.js": {
-    "file": "assets/tab-DYnH3x-i.js",
+  "_tab-C-pc6AN6.js": {
+    "file": "assets/tab-C-pc6AN6.js",
     "name": "tab",
     "imports": [
       "_rolldown-runtime-aKtaBQYM.js",
@@ -95,7 +95,7 @@
     "isEntry": true
   },
   "assets/js/pages/audience.js": {
-    "file": "assets/pages/audience-RlrUCR-1.js",
+    "file": "assets/pages/audience-BGqCzhSz.js",
     "name": "pages/audience",
     "src": "assets/js/pages/audience.js",
     "isEntry": true,
@@ -106,7 +106,7 @@
     ]
   },
   "assets/js/pages/challenge.js": {
-    "file": "assets/pages/challenge-D-xWlT3X.js",
+    "file": "assets/pages/challenge-ChZjjrzo.js",
     "name": "pages/challenge",
     "src": "assets/js/pages/challenge.js",
     "isEntry": true,
@@ -114,15 +114,15 @@
       "_rolldown-runtime-aKtaBQYM.js",
       "assets/js/pages/main.js",
       "assets/js/pages/main.js",
-      "_tab-DYnH3x-i.js",
-      "_CommentBox-CkZtICyq.js"
+      "_tab-C-pc6AN6.js",
+      "_CommentBox-Ckws3YAz.js"
     ],
     "css": [
       "assets/challenge-Y-iFcMhA.css"
     ]
   },
   "assets/js/pages/challenges.js": {
-    "file": "assets/pages/challenges-CxiQ-he_.js",
+    "file": "assets/pages/challenges-Db72ippN.js",
     "name": "pages/challenges",
     "src": "assets/js/pages/challenges.js",
     "isEntry": true,
@@ -133,7 +133,7 @@
     ]
   },
   "assets/js/pages/configs.js": {
-    "file": "assets/pages/configs-Cr5M2vou.js",
+    "file": "assets/pages/configs-5Q3v0FYb.js",
     "name": "pages/configs",
     "src": "assets/js/pages/configs.js",
     "isEntry": true,
@@ -141,12 +141,12 @@
       "_rolldown-runtime-aKtaBQYM.js",
       "assets/js/pages/main.js",
       "assets/js/pages/main.js",
-      "_tab-DYnH3x-i.js",
+      "_tab-C-pc6AN6.js",
       "_htmlmixed-DbLmFGC3.js"
     ]
   },
   "assets/js/pages/editor.js": {
-    "file": "assets/pages/editor-BlS9TBsp.js",
+    "file": "assets/pages/editor-DuExna_G.js",
     "name": "pages/editor",
     "src": "assets/js/pages/editor.js",
     "isEntry": true,
@@ -154,12 +154,12 @@
       "_rolldown-runtime-aKtaBQYM.js",
       "assets/js/pages/main.js",
       "assets/js/pages/main.js",
-      "_CommentBox-CkZtICyq.js",
+      "_CommentBox-Ckws3YAz.js",
       "_htmlmixed-DbLmFGC3.js"
     ]
   },
   "assets/js/pages/main.js": {
-    "file": "assets/pages/main-DNAMzgwK.js",
+    "file": "assets/pages/main-Bdz0jqQ7.js",
     "name": "pages/main",
     "src": "assets/js/pages/main.js",
     "isEntry": true,
@@ -168,7 +168,7 @@
     ]
   },
   "assets/js/pages/module.js": {
-    "file": "assets/pages/module-C91p9QoP.js",
+    "file": "assets/pages/module-ZTI8ceWH.js",
     "name": "pages/module",
     "src": "assets/js/pages/module.js",
     "isEntry": true,
@@ -179,7 +179,7 @@
     ]
   },
   "assets/js/pages/notifications.js": {
-    "file": "assets/pages/notifications-B3TJeZKr.js",
+    "file": "assets/pages/notifications-vQ-IL-Jy.js",
     "name": "pages/notifications",
     "src": "assets/js/pages/notifications.js",
     "isEntry": true,
@@ -190,7 +190,7 @@
     ]
   },
   "assets/js/pages/pages.js": {
-    "file": "assets/pages/pages-CJiYMh6W.js",
+    "file": "assets/pages/pages-2yjMKsn0.js",
     "name": "pages/pages",
     "src": "assets/js/pages/pages.js",
     "isEntry": true,
@@ -201,7 +201,7 @@
     ]
   },
   "assets/js/pages/reset.js": {
-    "file": "assets/pages/reset-bQnAp6Bq.js",
+    "file": "assets/pages/reset-BsXArn9p.js",
     "name": "pages/reset",
     "src": "assets/js/pages/reset.js",
     "isEntry": true,
@@ -212,7 +212,7 @@
     ]
   },
   "assets/js/pages/scoreboard.js": {
-    "file": "assets/pages/scoreboard-Cd6XBnuy.js",
+    "file": "assets/pages/scoreboard-CN8vMOD0.js",
     "name": "pages/scoreboard",
     "src": "assets/js/pages/scoreboard.js",
     "isEntry": true,
@@ -223,7 +223,7 @@
     ]
   },
   "assets/js/pages/statistics.js": {
-    "file": "assets/pages/statistics-DetMkwVp.js",
+    "file": "assets/pages/statistics-BWdIAuk-.js",
     "name": "pages/statistics",
     "src": "assets/js/pages/statistics.js",
     "isEntry": true,
@@ -235,7 +235,7 @@
     ]
   },
   "assets/js/pages/submissions.js": {
-    "file": "assets/pages/submissions-z4eMe_uS.js",
+    "file": "assets/pages/submissions-CeFAN5QV.js",
     "name": "pages/submissions",
     "src": "assets/js/pages/submissions.js",
     "isEntry": true,
@@ -246,7 +246,7 @@
     ]
   },
   "assets/js/pages/team.js": {
-    "file": "assets/pages/team-BB_QkkHp.js",
+    "file": "assets/pages/team-BJPQff-N.js",
     "name": "pages/team",
     "src": "assets/js/pages/team.js",
     "isEntry": true,
@@ -254,12 +254,12 @@
       "_rolldown-runtime-aKtaBQYM.js",
       "assets/js/pages/main.js",
       "assets/js/pages/main.js",
-      "_CommentBox-CkZtICyq.js",
-      "_graphs-Ce9Mt1yq.js"
+      "_CommentBox-Ckws3YAz.js",
+      "_graphs-ogHqCKAE.js"
     ]
   },
   "assets/js/pages/teams.js": {
-    "file": "assets/pages/teams-_rCN29oo.js",
+    "file": "assets/pages/teams-PDmPSvkY.js",
     "name": "pages/teams",
     "src": "assets/js/pages/teams.js",
     "isEntry": true,
@@ -270,7 +270,7 @@
     ]
   },
   "assets/js/pages/user.js": {
-    "file": "assets/pages/user-BzzZD0uO.js",
+    "file": "assets/pages/user-ChNciJRn.js",
     "name": "pages/user",
     "src": "assets/js/pages/user.js",
     "isEntry": true,
@@ -278,12 +278,12 @@
       "_rolldown-runtime-aKtaBQYM.js",
       "assets/js/pages/main.js",
       "assets/js/pages/main.js",
-      "_CommentBox-CkZtICyq.js",
-      "_graphs-Ce9Mt1yq.js"
+      "_CommentBox-Ckws3YAz.js",
+      "_graphs-ogHqCKAE.js"
     ]
   },
   "assets/js/pages/users.js": {
-    "file": "assets/pages/users-D2QGqzFU.js",
+    "file": "assets/pages/users-Cr6YRgp8.js",
     "name": "pages/users",
     "src": "assets/js/pages/users.js",
     "isEntry": true,

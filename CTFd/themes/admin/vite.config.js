@@ -13,10 +13,18 @@ export default defineConfig({
       vue: "@vue/compat"
     }
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // Bootstrap 4 still uses @import internally; these warnings are not ours.
+        silenceDeprecations: ["import", "global-builtin", "color-functions", "if-function", "slash-div", "mixed-decls"]
+      }
+    }
+  },
   build: {
     manifest: "manifest.json",
     outDir: "static",
-    rollupOptions: {
+    rolldownOptions: {
       plugins: [
         copy({
           targets: [

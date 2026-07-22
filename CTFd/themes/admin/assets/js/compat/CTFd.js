@@ -12,6 +12,20 @@ import { htmlEntities, createHtmlNode } from "../utils/html";
 import { getScript } from "../utils/ajax";
 
 const api = new API("/");
+
+// Mirrors the core theme's CTFd.pages.challenge surface so a challenge type
+// plugin's view.js can submit through the same call in either theme.
+const pages = {
+  challenge: {
+    submitChallenge(challengeId, submission, preview = false) {
+      const params = preview ? { preview: true } : {};
+      return api.post_challenge_attempt(params, {
+        challenge_id: challengeId,
+        submission: submission,
+      });
+    },
+  },
+};
 const user = {};
 const _internal = {};
 const ui = {
@@ -73,6 +87,7 @@ const CTFd = {
   lib,
   _internal,
   challenge,
+  pages,
   plugin,
 };
 
